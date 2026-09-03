@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://uuqcna1vfcpo"]
+
+[ext_resource type="Texture2D" uid="uid://bdxr6j8a66nqg" path="res://assets/inventory_slot.png" id="1_qw0r6"]
+[ext_resource type="PackedScene" uid="uid://ddtqe1tqhwmhm" path="res://scenes/new_slot.tscn" id="2_hj2ta"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7me2p"]
+texture = ExtResource("1_qw0r6")
+
+[node name="Inventory" type="Control" unique_id=1672687973]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1338027022]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7me2p")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=1130363157]
+layout_mode = 2
+columns = 8
+
+[node name="NewSlot" parent="PanelContainer/GridContainer" unique_id=1359337231 instance=ExtResource("2_hj2ta")]
+layout_mode = 2
+
+[node name="NewSlot2" parent="PanelContainer/GridContainer" unique_id=191792163 instance=ExtResource("2_hj2ta")]
+layout_mode = 2
+
+[node name="NewSlot3" parent="PanelContainer/GridContainer" unique_id=1818543045 instance=ExtResource("2_hj2ta")]
+layout_mode = 2
+
+[node name="NewSlot4" parent="PanelContainer/GridContainer" unique_id=1711024105 instance=ExtResource("2_hj2ta")]
+layout_mode = 2
+
+[node name="NewSlot5" parent="PanelContainer/GridContainer" unique_id=1525296011 instance=ExtResource("2_hj2ta")]
+layout_mode = 2
+
+[node name="NewSlot6" parent="PanelContainer/GridContainer" unique_id=695801243 instance=ExtResource("2_hj2ta")]
+layout_mode = 2
+
+[node name="NewSlot7" parent="PanelContainer/GridContainer" unique_id=974806289 instance=ExtResource("2_hj2ta")]
+layout_mode = 2
+
+[node name="NewSlot8" parent="PanelContainer/GridContainer" unique_id=493428448 instance=ExtResource("2_hj2ta")]
+layout_mode = 2

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://0x70gvhl7aje"]
+
+[ext_resource type="Texture2D" uid="uid://bdxr6j8a66nqg" path="res://assets/inventory_slot.png" id="1_dxvxp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6ep4"]
+texture = ExtResource("1_dxvxp")
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpyw1"]
+
+[node name="InventorySlot" type="Panel" unique_id=245437970]
+custom_minimum_size = Vector2(25, 25)
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.062000003
+offset_right = -0.3199997
+offset_bottom = -0.1760025
+theme_override_styles/panel = SubResource("StyleBoxTexture_c6ep4")
+
+[node name="Label" type="Label" parent="." unique_id=675967726]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -25.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "1"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1044610156]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true

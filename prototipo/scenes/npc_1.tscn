@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://df3hsae6dilx"]
+
+[ext_resource type="Texture2D" uid="uid://bf0mxslmkyjru" path="res://assets/64x64 adventure characters.png" id="1_8dm1u"]
+[ext_resource type="Script" uid="uid://cmq4fowe0bifs" path="res://scripts/npc_1.gd" id="1_ttshn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6ep4"]
+height = 54.0
+
+[node name="NPC1" type="CharacterBody2D" unique_id=1371084103 groups=["NPC"]]
+script = ExtResource("1_ttshn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=59927868]
+texture = ExtResource("1_8dm1u")
+region_enabled = true
+region_rect = Rect2(84, 134, 27.200012, 60.799988)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1188414707]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_c6ep4")

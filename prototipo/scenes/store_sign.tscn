@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b0lxvqbrpoduo"]
+
+[ext_resource type="Script" uid="uid://yswo2jt6fflc" path="res://scripts/store_sign.gd" id="1_jo0lx"]
+[ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/Wooden_House_Walls_Tilset.png" id="1_m18nb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7me2p"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6ep4"]
+radius = 40.0
+
+[node name="StoreSign" type="StaticBody2D" unique_id=1580639512]
+script = ExtResource("1_jo0lx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1114386725]
+shape = SubResource("RectangleShape2D_7me2p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=314514095]
+texture = ExtResource("1_m18nb")
+region_enabled = true
+region_rect = Rect2(48.02251, 31.845135, 16.01054, 15.550716)
+
+[node name="InteractionRange" type="Area2D" parent="." unique_id=970632927]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange" unique_id=136856070]
+shape = SubResource("CircleShape2D_c6ep4")
+
+[node name="Timer4NPC" type="Timer" parent="." unique_id=811131106]
+wait_time = 4.0
+
+[node name="Label" type="Label" parent="." unique_id=1309867484]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = -56.0
+offset_right = 74.0
+offset_bottom = -33.0
+grow_horizontal = 2
+text = "Abrir/Cerrar tienda"
+
+[connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
+[connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]
+[connection signal="timeout" from="Timer4NPC" to="." method="_on_timer_4npc_timeout"]

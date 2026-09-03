@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://khghbb8v8djo"]
+
+[ext_resource type="Texture2D" uid="uid://ba43lqh4scx3m" path="res://assets/Gold Stone 6.png" id="1_otydu"]
+[ext_resource type="PackedScene" uid="uid://cn7clxbs3d1of" path="res://scenes/searchable.tscn" id="2_ewsvt"]
+[ext_resource type="PackedScene" uid="uid://oesdaoo3lvql" path="res://scenes/loot_gold.tscn" id="3_ewsvt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
+radius = 34.058773
+
+[node name="GoldOre" type="StaticBody2D" unique_id=1111034709]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1465367596]
+texture = ExtResource("1_otydu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=880317534]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_7me2p")
+
+[node name="Searchable" parent="." unique_id=1817318536 instance=ExtResource("2_ewsvt")]
+loot_pool = Array[PackedScene]([ExtResource("3_ewsvt")])
+metadata/_edit_lock_ = true

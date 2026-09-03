@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://oesdaoo3lvql"]
+
+[ext_resource type="Script" uid="uid://cup2sroauvsxs" path="res://scripts/loot_gold.gd" id="1_4h35b"]
+[ext_resource type="Texture2D" uid="uid://c58xiyh62i0yo" path="res://assets/Gold_Resource.png" id="1_n7vfp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
+radius = 14.0
+
+[node name="LootGold" type="StaticBody2D" unique_id=925197 groups=["Pickable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_4h35b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=495126337]
+texture = ExtResource("1_n7vfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=903146974]
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_7me2p")

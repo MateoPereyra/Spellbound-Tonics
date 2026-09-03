@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmpp1gnwujxf7"]
+
+[ext_resource type="Texture2D" uid="uid://8h6b3o3103v6" path="res://assets/mushroom.png" id="1_1i3ok"]
+[ext_resource type="Script" uid="uid://cjnrw55yt17ud" path="res://scripts/loot_mushroom.gd" id="1_b7bun"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6ep4"]
+radius = 7.0
+
+[node name="LootMushroom" type="StaticBody2D" unique_id=692791429 groups=["Pickable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_b7bun")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2113362470]
+texture = ExtResource("1_1i3ok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1409154105]
+shape = SubResource("CircleShape2D_c6ep4")

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dduabonv5rqxh"]
+
+[ext_resource type="Script" uid="uid://cl8l2up04o5f7" path="res://scripts/fireball.gd" id="1_1gl40"]
+[ext_resource type="Texture2D" uid="uid://3iolispchcrr" path="res://assets/FireballSpr.png" id="2_cb14k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7me2p"]
+radius = 11.0
+height = 34.0
+
+[node name="Fireball" type="Area2D" unique_id=683899324]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("1_1gl40")
+speed = 450
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=324156457]
+texture = ExtResource("2_cb14k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152702140]
+position = Vector2(-3, -5)
+shape = SubResource("CapsuleShape2D_7me2p")
+
+[node name="Timer" type="Timer" parent="." unique_id=309978944]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

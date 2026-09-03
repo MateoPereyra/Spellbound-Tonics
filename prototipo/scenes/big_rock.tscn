@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cayd7f5e62yt1"]
+
+[ext_resource type="Texture2D" uid="uid://btrksqfvexl8u" path="res://assets/Rock4.png" id="1_m6bll"]
+[ext_resource type="PackedScene" uid="uid://cn7clxbs3d1of" path="res://scenes/searchable.tscn" id="2_oppl4"]
+[ext_resource type="PackedScene" uid="uid://dr8s7c80sdp7b" path="res://scenes/loot_rock.tscn" id="3_rs8ae"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ctn6n"]
+radius = 18.0
+height = 48.0
+
+[node name="BigRock" type="StaticBody2D" unique_id=1023769775]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=741151723]
+texture = ExtResource("1_m6bll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=377206676]
+position = Vector2(-2, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ctn6n")
+
+[node name="Searchable" parent="." unique_id=1817318536 instance=ExtResource("2_oppl4")]
+loot_pool = Array[PackedScene]([ExtResource("3_rs8ae")])
