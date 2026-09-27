@@ -19,21 +19,21 @@ func _input(event: InputEvent) -> void:
 				drop.global_position = global_position + offset
 				on_cd = true
 				$Timer.start()
-			prints("Interactuo")
+			#prints("Interactuo")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		can_search = true
 		label.show()
-		prints("Entro")
+		#prints("Entro")
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		can_search = false
 		label.hide()
-		prints("Salio")
+		#prints("Salio")
 
 func _on_timer_timeout() -> void:
 	on_cd = false
-	prints("Ya puede buscar")
+	#prints("Ya puede buscar")

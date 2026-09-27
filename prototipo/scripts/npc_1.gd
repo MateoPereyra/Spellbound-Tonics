@@ -13,7 +13,7 @@ var activado := false
 
 func _ready() -> void:
 	posicion_anterior = path_follow.global_position
-	prints(orden_propio)
+	#prints(orden_propio)
 
 func _physics_process(delta: float) -> void:
 	if activado:

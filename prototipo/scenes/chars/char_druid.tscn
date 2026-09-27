@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://doxkbg76kiumq"]
+
+[ext_resource type="Script" uid="uid://ds54xh2w8nxx4" path="res://scripts/char_druid.gd" id="1_15vwt"]
+[ext_resource type="Texture2D" uid="uid://bf0mxslmkyjru" path="res://assets/64x64 adventure characters.png" id="1_crm7c"]
+[ext_resource type="Resource" uid="uid://c4luiux1xf0nc" path="res://dialogues/druid_dialogue.dialogue" id="2_xa5pl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c6ep4"]
+radius = 16.0
+height = 54.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
+radius = 48.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_xa5pl"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="CharDruid" type="CharacterBody2D" unique_id=1179772620]
+script = ExtResource("1_15vwt")
+dialogue_file = ExtResource("2_xa5pl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=313158116]
+texture = ExtResource("1_crm7c")
+region_enabled = true
+region_rect = Rect2(134.22516, 6.158595, 52.139587, 58.16466)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2012430044]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_c6ep4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1890704732]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=224597771]
+shape = SubResource("CircleShape2D_7me2p")
+
+[node name="Label" type="Label" parent="." unique_id=1458875972]
+offset_left = -87.0
+offset_top = -61.0
+offset_right = 88.0
+offset_bottom = -38.0
+text = "Presiona E para hablar"
+label_settings = SubResource("LabelSettings_xa5pl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

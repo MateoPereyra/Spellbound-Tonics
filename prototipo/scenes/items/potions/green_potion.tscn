@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://daucr5w86f0ga"]
+
+[ext_resource type="Texture2D" uid="uid://hnqbk6q2nwja" path="res://assets/green_heart.png" id="1_5fij0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6ep4"]
+radius = 12.0
+
+[node name="GreenPotion" type="StaticBody2D" unique_id=649772749]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1698969985]
+shape = SubResource("CircleShape2D_c6ep4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1586483782]
+texture = ExtResource("1_5fij0")

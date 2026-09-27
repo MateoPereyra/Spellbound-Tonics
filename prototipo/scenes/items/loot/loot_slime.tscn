@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dpd4mmoappr3g"]
+
+[ext_resource type="Script" uid="uid://yrdytvdyn88d" path="res://scripts/loot_effect.gd" id="1_3wtwb"]
+[ext_resource type="Texture2D" uid="uid://vvo86ecj0ohg" path="res://assets/Slime_Small_Blue(recortado).png" id="2_eyxqg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
+radius = 6.0
+
+[node name="LootSlime" type="StaticBody2D" unique_id=1583902525 groups=["Pickable"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_3wtwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1078850807]
+shape = SubResource("CircleShape2D_7me2p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=709481174]
+texture = ExtResource("2_eyxqg")
+region_rect = Rect2(9.662937, 72, 12.805946, 11.432251)
+region_filter_clip_enabled = true

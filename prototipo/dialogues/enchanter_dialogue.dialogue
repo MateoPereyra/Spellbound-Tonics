@@ -1,0 +1,13 @@
+~ start
+Enchanter: Buenas
+- Hola
+- Te vendo pociones?
+Enchanter: Vendes pociones?
+- No => END
+- Si, en la tienda
+	Enchanter: Está abierta?
+	- Aún no
+		Enchanter: Bueno apurate
+	- Si
+		Enchanter: Buenisimo che
+=> END

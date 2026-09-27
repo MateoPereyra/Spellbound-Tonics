@@ -21,16 +21,16 @@ func _input(event: InputEvent) -> void:
 			timer_on = false
 
 func _on_timer_4npc_timeout() -> void:
-	var orden = randi_range(1, 7)
+	var orden = randi_range(1, 2)
 	new_customer.emit(orden)
-	prints("Abrio: " + str(orden) + " npc")
+	prints(str(orden) + " npc")
 
 func _on_interaction_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		prints("Entro a cartel")
+		#prints("Entro a cartel")
 		can_interact = true
 
 func _on_interaction_range_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		prints("Salio a cartel")
+		#prints("Salio a cartel")
 		can_interact = false

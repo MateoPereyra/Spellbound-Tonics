@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://16bg6pymkbx2"]
+
+[ext_resource type="Texture2D" uid="uid://fbjyc4si8c2r" path="res://assets/red_droplet.png" id="1_72o2t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6ep4"]
+
+[node name="RedPotionSmall" type="StaticBody2D" unique_id=1991839292]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=740323321]
+shape = SubResource("CircleShape2D_c6ep4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2025014166]
+texture = ExtResource("1_72o2t")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c7gbb83xjoys5"]
+
+[ext_resource type="Texture2D" uid="uid://cdrswjt8m8ft8" path="res://assets/black_droplet.png" id="1_pnpmo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
+
+[node name="BlackPotionSmall" type="StaticBody2D" unique_id=1691171788]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1430906925]
+shape = SubResource("CircleShape2D_7me2p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=260318492]
+texture = ExtResource("1_pnpmo")

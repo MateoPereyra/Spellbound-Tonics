@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://clgj74fsihust"]
+
+[ext_resource type="Texture2D" uid="uid://ctrjvvst1jlga" path="res://assets/Bushe1.png" id="1_3u8ya"]
+[ext_resource type="PackedScene" uid="uid://cn7clxbs3d1of" path="res://scenes/components/searchable.tscn" id="2_ehqem"]
+[ext_resource type="PackedScene" uid="uid://cmpp1gnwujxf7" path="res://scenes/items/loot/loot_mushroom.tscn" id="3_tu87o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw7mk"]
+atlas = ExtResource("1_3u8ya")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2w1a"]
+atlas = ExtResource("1_3u8ya")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0w87"]
+atlas = ExtResource("1_3u8ya")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krnit"]
+atlas = ExtResource("1_3u8ya")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma48p"]
+atlas = ExtResource("1_3u8ya")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24lh1"]
+atlas = ExtResource("1_3u8ya")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap6vv"]
+atlas = ExtResource("1_3u8ya")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq0nq"]
+atlas = ExtResource("1_3u8ya")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6ep4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw7mk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2w1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0w87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krnit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma48p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24lh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap6vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq0nq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w4ld"]
+radius = 19.0
+height = 58.0
+
+[node name="Bush" type="StaticBody2D" unique_id=1345311607]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2003350549]
+sprite_frames = SubResource("SpriteFrames_c6ep4")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.41868663
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=368550700]
+position = Vector2(0, -8)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5w4ld")
+
+[node name="Searchable" parent="." unique_id=1817318536 instance=ExtResource("2_ehqem")]
+loot_pool = Array[PackedScene]([ExtResource("3_tu87o")])

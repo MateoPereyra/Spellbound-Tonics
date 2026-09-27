@@ -18,7 +18,7 @@ var objetive : Node2D
 func _ready() -> void:
 	generar_nuevo_destino()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not enemie_on_sight:
 		movimiento()
 	else:
@@ -86,7 +86,7 @@ func move_to_attack():
 		velocity = Vector2.ZERO
 		if attack_cd.is_stopped():
 			objetive.take_damage(damage)
-			prints("Attacking")
+			#prints("Attacking")
 			attack_cd.start()
 
 func _on_detection_range_body_entered(body: Node2D) -> void:

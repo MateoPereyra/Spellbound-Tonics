@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cm35hvrt1k1cc"]
+
+[ext_resource type="Script" uid="uid://cbnf0f2oe8t7r" path="res://scripts/teleporter.gd" id="1_ka7gx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7me2p"]
+size = Vector2(128, 34)
+
+[node name="Teleporter" type="Area2D" unique_id=81992949]
+collision_layer = 0
+script = ExtResource("1_ka7gx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=965183020]
+shape = SubResource("RectangleShape2D_7me2p")
+
+[node name="Label" type="Label" parent="." unique_id=1538381389]
+anchors_preset = -1
+offset_left = -24.0
+offset_top = -48.0
+offset_right = 25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Entrar"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -5,16 +5,18 @@ extends CharacterBody2D
 @onready var money_label: Label = $CanvasLayer/MoneyLabel
 @onready var spell_icon: TextureRect = $CanvasLayer/SpellIcon
 @onready var current_spell_label: Label = $CanvasLayer/CurrentSpellLabel
+@onready var cd_spell: Timer = $CDSpell
 
 @export var health := 100
 @export var speed := 100
 @export var pick_speed := 90
 @export var available_spells : Array[PackedScene] = []
-@export var money := 100
+@export var money := 0
 
 var objeto_a_agarrar : Array[StaticBody2D] = []
 var inventory_full := false
 var current_spell
+var can_use_spell := true
 var is_interacting := false
 
 signal picked(item_data: ItemData)
@@ -25,11 +27,12 @@ func _ready() -> void:
 	money_label.text = "$" + str(money)
 	spell_icon.texture = get_spell_texture(current_spell)
 	get_current_spell(current_spell)
+	load_money()
 
 func _input(event: InputEvent) -> void:
 	if not is_interacting:
 		motion = Input.get_vector("left", "right", "up", "down")
-		if event.is_action_pressed("spell"):
+		if event.is_action_pressed("spell") and can_use_spell:
 			use_spell()
 
 func _physics_process(delta: float) -> void:
@@ -46,8 +49,15 @@ func _physics_process(delta: float) -> void:
 func pick_item(item: StaticBody2D, array: Array[StaticBody2D]):
 	var data := ItemData.new()
 	data.scene = load(item.scene_file_path)
-	data.efecto = item.efecto
 	data.name = item.name
+	
+	var e := EffectData.new()
+	e.tipo = item.tipo_efecto
+	e.valor = item.efecto
+	var lista_efectos : Array[EffectData] = []
+	lista_efectos.append(e)
+	data.efectos = lista_efectos
+	
 	picked.emit(data)
 	array.erase(item)
 	item.queue_free()
@@ -64,6 +74,8 @@ func use_spell():
 	get_parent().add_child(shot)
 	shot.global_position = $Marker2D.global_position
 	shot.direction = (get_global_mouse_position() - shot.global_position).normalized()
+	can_use_spell = false
+	cd_spell.start()
 
 func toggle_interact():
 	is_interacting = !is_interacting
@@ -91,8 +103,28 @@ func take_damage(damage: int):
 	health_bar.value = health
 	if health <= 0:
 		prints("0 HP")
-	pass
+		die()
+
+func die():
+	GameData.game_over()
 
 func potion_bought(amount: int):
 	money += amount
+	money_label.text = str(money)
+
+func _on_cd_spell_timeout() -> void:
+	can_use_spell = true
+
+func can_pay(price: int):
+	return price <= money
+
+func pay(price: int):
+	money -= price
+	money_label.text = str(money)
+
+func save_money():
+	GameData.saved_money = money
+
+func load_money():
+	money = GameData.saved_money
 	money_label.text = str(money)

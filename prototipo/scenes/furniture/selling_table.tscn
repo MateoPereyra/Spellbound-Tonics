@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dy0d8703vs0cu"]
+
+[ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/Wooden_House_Walls_Tilset.png" id="1_fovjp"]
+[ext_resource type="Script" uid="uid://cykoaqmko7c0n" path="res://scripts/selling_table.gd" id="1_pp230"]
+[ext_resource type="PackedScene" uid="uid://bqfficeo0nuai" path="res://scenes/items/potions/black_potion.tscn" id="2_rfatm"]
+[ext_resource type="PackedScene" uid="uid://ddtqe1tqhwmhm" path="res://scenes/UI/new_slot.tscn" id="3_rfatm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7me2p"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
+radius = 62.008064
+
+[node name="SellingTable" type="StaticBody2D" unique_id=1370882965]
+script = ExtResource("1_pp230")
+potion = ExtResource("2_rfatm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1059103879]
+texture = ExtResource("1_fovjp")
+region_enabled = true
+region_rect = Rect2(47.901314, 0, 32.517105, 32.12285)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=589097091]
+shape = SubResource("RectangleShape2D_7me2p")
+
+[node name="InteractionRange" type="Area2D" parent="." unique_id=1642899429]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange" unique_id=181128486]
+shape = SubResource("CircleShape2D_7me2p")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1470729577]
+
+[node name="NewSlot" parent="Node2D" unique_id=1359337231 instance=ExtResource("3_rfatm")]
+custom_maximum_size = Vector2(16, 16)
+offset_left = 16.0
+offset_top = -28.0
+offset_right = 32.0
+offset_bottom = -12.0
+
+[node name="NewSlot2" parent="Node2D" unique_id=1689446136 instance=ExtResource("3_rfatm")]
+custom_maximum_size = Vector2(16, 16)
+offset_left = -16.0
+offset_top = -28.0
+offset_bottom = -12.0
+
+[node name="NewSlot3" parent="Node2D" unique_id=195554508 instance=ExtResource("3_rfatm")]
+custom_maximum_size = Vector2(16, 16)
+offset_top = -28.0
+offset_right = 16.0
+offset_bottom = -12.0
+
+[node name="NewSlot4" parent="Node2D" unique_id=1135534702 instance=ExtResource("3_rfatm")]
+custom_maximum_size = Vector2(16, 16)
+offset_left = -32.0
+offset_top = -28.0
+offset_right = -16.0
+offset_bottom = -12.0
+
+[node name="Label" type="Label" parent="." unique_id=1431574464]
+offset_left = -66.0
+offset_top = -96.0
+offset_right = 66.0
+offset_bottom = -73.0
+text = "Colocar Pociones"
+
+[connection signal="body_entered" from="InteractionRange" to="." method="_on_interaction_range_body_entered"]
+[connection signal="body_exited" from="InteractionRange" to="." method="_on_interaction_range_body_exited"]

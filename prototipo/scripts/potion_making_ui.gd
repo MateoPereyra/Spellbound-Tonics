@@ -1,44 +1,50 @@
 extends Control
 
 @onready var inspection_label_result: Label = $InspectionLabelResult
-
-const BLACK_POTION = preload("res://scenes/black_potion.tscn")
+@export var potion : PackedScene
 
 func _ready() -> void:
 	inspection_label_result.hide()
-	pass
 
 func _on_inspection_slot_toggle_label(data: ItemData, flag: bool) -> void:
 	if flag:
-		inspection_label_result.text = "El item " + data.name + " tiene " + str(data.efecto) + " de veneno"
+		var texto = "El item " + data.name + " tiene:\n"
+		for efecto in data.efectos:
+			texto += EffectData.EffectType.keys()[efecto.tipo] + ": " + str(efecto.valor) + "\n"
+		inspection_label_result.text = texto
 		inspection_label_result.show()
 	else:
 		inspection_label_result.hide()
 
 func _on_button_pressed() -> void:
-	var total := 0
+	var sumas := {} 
 	var result_slot : Slot = null
-	var used_slots: Array[Slot] = []
-	var has_ingredients := false
+	var used_slots : Array[Slot] = []
 	
 	for slot in get_children():
 		if slot is Slot:
 			if slot.slot_type == Slot.SlotType.NORMAL and slot.item != null:
-				total += slot.item.efecto
 				used_slots.append(slot)
-				has_ingredients = true
+				for efecto in slot.item.efectos:
+					if sumas.has(efecto.tipo):
+						sumas[efecto.tipo] += efecto.valor
+					else:
+						sumas[efecto.tipo] = efecto.valor
 			elif slot.slot_type == Slot.SlotType.RESULTADO and slot.item == null:
 				result_slot = slot
-	prints(str(total))
 	
-	if has_ingredients and result_slot != null:
+	if result_slot != null and not sumas.is_empty():
 		var data := ItemData.new()
-		data.scene = BLACK_POTION
-		data.name = "Poción Negra"
-		data.efecto = total
+		data.scene = potion
+		data.name = "Poción"
+		data.efectos = []
+		
+		for tipo in sumas.keys():
+			var e := EffectData.new()
+			e.tipo = tipo
+			e.valor = sumas[tipo]
+			data.efectos.append(e)
+		
 		result_slot.item = data
-	
-	for slot in used_slots:
+		for slot in used_slots:
 			slot.item = null
-	
-	prints(str(total))

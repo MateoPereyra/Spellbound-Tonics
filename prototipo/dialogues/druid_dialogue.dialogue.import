@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c4luiux1xf0nc"
+path="res://.godot/imported/druid_dialogue.dialogue-4b95a3c1846a0f1e4be6309d44c376c8.tres"
+
+[deps]
+
+source_file="res://dialogues/druid_dialogue.dialogue"
+dest_files=["res://.godot/imported/druid_dialogue.dialogue-4b95a3c1846a0f1e4be6309d44c376c8.tres"]
+
+[params]
+
+defaults=true

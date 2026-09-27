@@ -30,17 +30,16 @@ func get_preview():
 	
 	return preview
 
-func _get_drag_data(at_position: Vector2) -> Variant:
+func _get_drag_data(_at_position: Vector2) -> Variant:
 	set_drag_preview(get_preview())
 	return self
 
-func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	if slot_type == SlotType.RESULTADO:
 		return false
 	return data is Slot
 
-func _drop_data(at_position: Vector2, data: Variant) -> void:
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var temp = item
 	item = data.item
 	data.item = temp
-	

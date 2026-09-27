@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cfknsd87xcj7"
+path="res://.godot/imported/enchanter_dialogue.dialogue-4c74bef7cf8b7bb44d9fe4444b3787ca.tres"
+
+[deps]
+
+source_file="res://dialogues/enchanter_dialogue.dialogue"
+dest_files=["res://.godot/imported/enchanter_dialogue.dialogue-4c74bef7cf8b7bb44d9fe4444b3787ca.tres"]
+
+[params]
+
+defaults=true

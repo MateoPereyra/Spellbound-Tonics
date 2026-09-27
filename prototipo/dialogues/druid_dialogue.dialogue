@@ -1,0 +1,8 @@
+~ start
+Druid: [[Hola|Buenas tardes|Buenas]], este es mi dialogo en el prototipo che.
+Druid: ¿Ahora qué?
+- No sé
+	Druid: Yo tampoco.
+- Chau
+	Druid: Nos vemos. => END
+=> END

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bqfficeo0nuai"]
+
+[ext_resource type="Script" uid="uid://dpkiqr86u2nlw" path="res://scripts/potions.gd" id="1_yxnqy"]
+[ext_resource type="Texture2D" uid="uid://bys7dkua0vlhy" path="res://assets/black_heart.png" id="2_vaudd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
+
+[node name="BlackPotion" type="StaticBody2D" unique_id=1511209432 groups=["Pickable"]]
+script = ExtResource("1_yxnqy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=464126046]
+texture = ExtResource("2_vaudd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1247577999]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_7me2p")
