@@ -1,7 +1,8 @@
 extends Control
 
 @onready var inspection_label_result: Label = $InspectionLabelResult
-@export var potion : PackedScene
+#@export var potion : PackedScene
+@export var potion_scenes : Array[PackedScene] = []
 
 func _ready() -> void:
 	inspection_label_result.hide()
@@ -35,7 +36,9 @@ func _on_button_pressed() -> void:
 	
 	if result_slot != null and not sumas.is_empty():
 		var data := ItemData.new()
-		data.scene = potion
+		#data.scene = potion
+		var tipo_dominante = get_dominant_type(sumas)
+		data.scene = potion_scenes[tipo_dominante]
 		data.name = "Poción"
 		data.efectos = []
 		
@@ -48,3 +51,12 @@ func _on_button_pressed() -> void:
 		result_slot.item = data
 		for slot in used_slots:
 			slot.item = null
+
+func get_dominant_type(sumas: Dictionary) -> int:
+	var mejor_tipo := -1
+	var mejor_valor := -1
+	for tipo in sumas.keys():
+		if sumas[tipo] > mejor_valor:
+			mejor_valor = sumas[tipo]
+			mejor_tipo = tipo
+	return mejor_tipo

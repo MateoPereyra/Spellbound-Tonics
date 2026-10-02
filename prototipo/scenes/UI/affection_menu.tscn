@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://htumswihblal"]
+
+[ext_resource type="Texture2D" uid="uid://bf0mxslmkyjru" path="res://assets/64x64 adventure characters.png" id="1_fmp4k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7me2p"]
+atlas = ExtResource("1_fmp4k")
+region = Rect2(141.42563, 8.29155, 39.949677, 32.150864)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6ep4"]
+atlas = ExtResource("1_fmp4k")
+region = Rect2(207.41083, 68.36472, 36.538513, 37.08531)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpyw1"]
+atlas = ExtResource("1_fmp4k")
+region = Rect2(141.17964, 193.92744, 36.411392, 32.78531)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7me2p"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="AffectionMenu" type="Control" unique_id=656543800]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1591476978]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3294271
+anchor_top = 0.41280866
+anchor_right = 0.67057294
+anchor_bottom = 0.58719134
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1917696597]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2" unique_id=841000004]
+layout_mode = 2
+texture = SubResource("AtlasTexture_7me2p")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer2" unique_id=1089199161]
+layout_mode = 2
+texture = SubResource("AtlasTexture_c6ep4")
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/VBoxContainer2" unique_id=107718761]
+layout_mode = 2
+texture = SubResource("AtlasTexture_qpyw1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1699161154]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=1171812444 groups=["Druid", "ProgressBar"]]
+custom_minimum_size = Vector2(350, 35)
+layout_mode = 2
+
+[node name="ProgressBar2" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=1652506032 groups=["Enchanter", "ProgressBar"]]
+custom_minimum_size = Vector2(350, 35)
+layout_mode = 2
+
+[node name="ProgressBar3" type="ProgressBar" parent="HBoxContainer/VBoxContainer" unique_id=726756047 groups=["Hunter", "ProgressBar"]]
+custom_minimum_size = Vector2(350, 35)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=518249154]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -92.0
+offset_right = 114.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Relación con NPCs"
+label_settings = SubResource("LabelSettings_7me2p")
+horizontal_alignment = 1
+vertical_alignment = 1

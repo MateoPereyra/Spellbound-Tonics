@@ -14,6 +14,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
 		if dialogue_file != null and not talking:
 			start_dialogue()
+			for node in get_tree().get_nodes_in_group("Druid"):
+				if node.is_in_group("ProgressBar"):
+					node.value += 5
 
 func start_dialogue():
 	DialogueManager.show_dialogue_balloon(dialogue_file, "start") #El start es opcional

@@ -2,7 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://ddtqe1tqhwmhm" path="res://scenes/UI/new_slot.tscn" id="1_0kkba"]
 [ext_resource type="Script" uid="uid://dksemkv8bjfpl" path="res://scripts/potion_making_ui.gd" id="1_g5y8j"]
+[ext_resource type="PackedScene" uid="uid://daucr5w86f0ga" path="res://scenes/items/potions/green_potion.tscn" id="2_5ev38"]
 [ext_resource type="PackedScene" uid="uid://bqfficeo0nuai" path="res://scenes/items/potions/black_potion.tscn" id="2_7yfnn"]
+[ext_resource type="PackedScene" uid="uid://cv45lvrup1yb1" path="res://scenes/items/potions/green_potion_small.tscn" id="2_dmm8m"]
+[ext_resource type="PackedScene" uid="uid://c3pbtcv1fhkjh" path="res://scenes/items/potions/red_potion.tscn" id="3_o86ap"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c6ep4"]
 font_size = 20
@@ -17,7 +20,7 @@ grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 script = ExtResource("1_g5y8j")
-potion = ExtResource("2_7yfnn")
+potion_scenes = Array[PackedScene]([ExtResource("2_5ev38"), ExtResource("3_o86ap"), ExtResource("2_7yfnn"), ExtResource("2_dmm8m")])
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=890437830]

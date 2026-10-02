@@ -3,7 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/Wooden_House_Walls_Tilset.png" id="1_fovjp"]
 [ext_resource type="Script" uid="uid://cykoaqmko7c0n" path="res://scripts/selling_table.gd" id="1_pp230"]
 [ext_resource type="PackedScene" uid="uid://bqfficeo0nuai" path="res://scenes/items/potions/black_potion.tscn" id="2_rfatm"]
+[ext_resource type="PackedScene" uid="uid://c7gbb83xjoys5" path="res://scenes/items/potions/black_potion_small.tscn" id="3_0eiv3"]
 [ext_resource type="PackedScene" uid="uid://ddtqe1tqhwmhm" path="res://scenes/UI/new_slot.tscn" id="3_rfatm"]
+[ext_resource type="PackedScene" uid="uid://daucr5w86f0ga" path="res://scenes/items/potions/green_potion.tscn" id="4_7urm4"]
+[ext_resource type="PackedScene" uid="uid://cv45lvrup1yb1" path="res://scenes/items/potions/green_potion_small.tscn" id="5_h5fvy"]
+[ext_resource type="PackedScene" uid="uid://c3pbtcv1fhkjh" path="res://scenes/items/potions/red_potion.tscn" id="6_tr27o"]
+[ext_resource type="PackedScene" uid="uid://16bg6pymkbx2" path="res://scenes/items/potions/red_potion_small.tscn" id="7_hv8gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7me2p"]
 size = Vector2(32, 32)
@@ -13,7 +18,7 @@ radius = 62.008064
 
 [node name="SellingTable" type="StaticBody2D" unique_id=1370882965]
 script = ExtResource("1_pp230")
-potion = ExtResource("2_rfatm")
+potions = Array[PackedScene]([ExtResource("2_rfatm"), ExtResource("3_0eiv3"), ExtResource("4_7urm4"), ExtResource("5_h5fvy"), ExtResource("6_tr27o"), ExtResource("7_hv8gk")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1059103879]
 texture = ExtResource("1_fovjp")
@@ -37,16 +42,16 @@ offset_top = -28.0
 offset_right = 32.0
 offset_bottom = -12.0
 
-[node name="NewSlot2" parent="Node2D" unique_id=1689446136 instance=ExtResource("3_rfatm")]
-custom_maximum_size = Vector2(16, 16)
-offset_left = -16.0
-offset_top = -28.0
-offset_bottom = -12.0
-
-[node name="NewSlot3" parent="Node2D" unique_id=195554508 instance=ExtResource("3_rfatm")]
+[node name="NewSlot2" parent="Node2D" unique_id=195554508 instance=ExtResource("3_rfatm")]
 custom_maximum_size = Vector2(16, 16)
 offset_top = -28.0
 offset_right = 16.0
+offset_bottom = -12.0
+
+[node name="NewSlot3" parent="Node2D" unique_id=1689446136 instance=ExtResource("3_rfatm")]
+custom_maximum_size = Vector2(16, 16)
+offset_left = -16.0
+offset_top = -28.0
 offset_bottom = -12.0
 
 [node name="NewSlot4" parent="Node2D" unique_id=1135534702 instance=ExtResource("3_rfatm")]

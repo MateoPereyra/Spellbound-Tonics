@@ -140,6 +140,7 @@ position = Vector2(-1536, -720)
 
 [node name="SellingTable2" parent="." unique_id=582251158 instance=ExtResource("4_3scp5")]
 position = Vector2(-1264, -720)
+table_id = 2
 
 [node name="StoreSign" parent="." unique_id=1580639512 instance=ExtResource("5_pkxii")]
 position = Vector2(-1304, -424)
@@ -157,6 +158,7 @@ curve = SubResource("Curve2D_b7pu3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1896519543]
 position = Vector2(-1616, 152)
+rotates = false
 loop = false
 
 [node name="NPC1" parent="Path2D/PathFollow2D" unique_id=1371084103 instance=ExtResource("8_v00u0")]
@@ -168,8 +170,10 @@ curve = SubResource("Curve2D_swr8c")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" unique_id=413894577]
 position = Vector2(-1320, 136)
 rotation = -1.6142472
+rotates = false
 loop = false
 
 [node name="NPC1" parent="Path2D2/PathFollow2D" unique_id=951331146 instance=ExtResource("8_v00u0")]
 position = Vector2(-23.97734, -1.0424805)
+rotation = 1.5707964
 orden_propio = 2

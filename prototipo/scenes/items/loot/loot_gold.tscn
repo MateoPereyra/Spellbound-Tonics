@@ -10,6 +10,7 @@ radius = 14.0
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_fc8f1")
+tipo_efecto = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=495126337]
 texture = ExtResource("1_n7vfp")

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dokhaovosiaqy"
+path="res://.godot/imported/hunter_dialogue.dialogue-32425aee6dee58459c02aeb648b3b23e.tres"
+
+[deps]
+
+source_file="res://dialogues/hunter_dialogue.dialogue"
+dest_files=["res://.godot/imported/hunter_dialogue.dialogue-32425aee6dee58459c02aeb648b3b23e.tres"]
+
+[params]
+
+defaults=true

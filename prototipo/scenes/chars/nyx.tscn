@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dduabonv5rqxh" path="res://scenes/spells/fireball.tscn" id="2_kjmvp"]
 [ext_resource type="PackedScene" uid="uid://uuqcna1vfcpo" path="res://scenes/UI/inventory.tscn" id="3_oq8bg"]
 [ext_resource type="Script" uid="uid://cgvbntexavbh0" path="res://scripts/inventory.gd" id="4_4416i"]
+[ext_resource type="PackedScene" uid="uid://htumswihblal" path="res://scenes/UI/affection_menu.tscn" id="6_8iyso"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7me2p"]
 radius = 12.0
@@ -121,6 +122,8 @@ offset_bottom = -0.17602539
 grow_vertical = 0
 text = "Click para disparar"
 metadata/_edit_lock_ = true
+
+[node name="AffectionMenu" parent="CanvasLayer" unique_id=656543800 instance=ExtResource("6_8iyso")]
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1532884187]
 position = Vector2(24, 0)

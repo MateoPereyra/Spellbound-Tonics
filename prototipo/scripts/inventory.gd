@@ -3,6 +3,7 @@ extends Control
 signal inventory_filled()
 
 func _ready() -> void:
+	GameData.scene_changing.connect(_on_scene_changing)
 	load_inventory()
 
 func _on_nyx_picked(item_data: ItemData) -> void:
@@ -29,3 +30,6 @@ func load_inventory() -> void:
 	for i in GameData.inventory_items.size():
 		if i < slots.size():
 			slots[i].item = GameData.inventory_items[i]
+
+func _on_scene_changing() -> void:
+	save_inventory()

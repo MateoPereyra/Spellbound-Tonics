@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var spell_icon: TextureRect = $CanvasLayer/SpellIcon
 @onready var current_spell_label: Label = $CanvasLayer/CurrentSpellLabel
 @onready var cd_spell: Timer = $CDSpell
+@onready var affection_menu: Control = $CanvasLayer/AffectionMenu
 
 @export var health := 100
 @export var speed := 100
@@ -18,22 +19,35 @@ var inventory_full := false
 var current_spell
 var can_use_spell := true
 var is_interacting := false
+var is_menu_visible := false
 
 signal picked(item_data: ItemData)
 
 func _ready() -> void:
+	GameData.scene_changing.connect(_on_scene_changing)
+	
 	current_spell = available_spells[0]
 	health_bar.value = health
 	money_label.text = "$" + str(money)
 	spell_icon.texture = get_spell_texture(current_spell)
 	get_current_spell(current_spell)
 	load_money()
+	
+	affection_menu.hide()
 
 func _input(event: InputEvent) -> void:
 	if not is_interacting:
 		motion = Input.get_vector("left", "right", "up", "down")
+		
 		if event.is_action_pressed("spell") and can_use_spell:
 			use_spell()
+		
+		if event.is_action_pressed("relationships"):
+			if !is_menu_visible:
+				affection_menu.show()
+			else:
+				affection_menu.hide()
+			is_menu_visible = !is_menu_visible
 
 func _physics_process(delta: float) -> void:
 	velocity = speed * motion
@@ -127,4 +141,11 @@ func save_money():
 
 func load_money():
 	money = GameData.saved_money
+	money_label.text = str(money)
+
+func _on_scene_changing() -> void:
+	save_money()
+
+func update_money(amount: int):
+	money += amount
 	money_label.text = str(money)

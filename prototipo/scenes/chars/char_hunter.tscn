@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bf0mxslmkyjru" path="res://assets/64x64 adventure characters.png" id="1_igdrc"]
 [ext_resource type="Script" uid="uid://vg21grgol2gy" path="res://scripts/char_hunter.gd" id="1_w633n"]
-[ext_resource type="Resource" uid="uid://dokhaovosiaqy" path="res://dialogues/hunter.dialogue" id="2_701c2"]
+[ext_resource type="Resource" uid="uid://dokhaovosiaqy" path="res://dialogues/hunter_dialogue.dialogue" id="2_701c2"]
+[ext_resource type="PackedScene" uid="uid://daucr5w86f0ga" path="res://scenes/items/potions/green_potion.tscn" id="3_364yb"]
+[ext_resource type="PackedScene" uid="uid://bqfficeo0nuai" path="res://scenes/items/potions/black_potion.tscn" id="4_4d4v6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpyw1"]
 height = 58.0
@@ -17,6 +19,10 @@ outline_color = Color(0, 0, 0, 1)
 [node name="CharHunter" type="CharacterBody2D" unique_id=1236896946]
 script = ExtResource("1_w633n")
 dialogue_file = ExtResource("2_701c2")
+items_a_pedir = Array[PackedScene]([ExtResource("3_364yb"), ExtResource("4_4d4v6")])
+pagos_de_mision = Array[int]([100, 120])
+nombres_de_items = Array[String](["Poción de veneno", "Poción de resistencia"])
+dialogos_disponibles = Array[String](["start", "mission_1"])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2050602012]
 texture = ExtResource("1_igdrc")

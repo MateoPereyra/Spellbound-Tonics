@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 @onready var timer_4npc: Timer = $Timer4NPC
+@onready var label: Label = $Label
 
 signal new_customer(orden: int)
 
@@ -8,6 +9,8 @@ var can_interact := false
 var timer_on := false
 
 func _ready() -> void:
+	label.text = "Abrir tienda"
+	
 	for npc in get_tree().get_nodes_in_group("NPC"):
 		new_customer.connect(npc._on_store_sign_new_customer)
 
@@ -16,9 +19,11 @@ func _input(event: InputEvent) -> void:
 		if not timer_on:
 			timer_4npc.start()
 			timer_on = true
+			label.text = "Cerrar tienda"
 		else:
 			timer_4npc.stop()
 			timer_on = false
+			label.text = "Abrir tienda"
 
 func _on_timer_4npc_timeout() -> void:
 	var orden = randi_range(1, 2)
