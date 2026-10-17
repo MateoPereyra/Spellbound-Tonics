@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://bh353e34rju4b"]
+
+[ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_cljuf"]
+[ext_resource type="Texture2D" uid="uid://8h6b3o3103v6" path="res://assets/mushroom.png" id="2_t8wbv"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_v03oc"]
+
+[sub_resource type="Resource" id="Resource_ckotg"]
+script = ExtResource("1_cljuf")
+max_value = 7
+metadata/_custom_type_script = "uid://cic8tj2gwlymw"
+
+[resource]
+script = ExtResource("3_v03oc")
+name = "Hongo"
+is_ingredient = true
+icon = ExtResource("2_t8wbv")
+effect_ranges = Array[ExtResource("1_cljuf")]([SubResource("Resource_ckotg")])
+metadata/_custom_type_script = "uid://bc683lnt43io8"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcnqxrjrdcvpb" path="res://assets/Slime_Medium_Blue.png" id="1_dix13"]
 [ext_resource type="Script" uid="uid://wwosilp6wwdo" path="res://scripts/blue_slime.gd" id="1_l0e5q"]
-[ext_resource type="PackedScene" uid="uid://dpd4mmoappr3g" path="res://scenes/items/loot/loot_slime.tscn" id="2_30a86"]
+[ext_resource type="Resource" uid="uid://d3evop4uu1ba8" path="res://items_tres/loot/slime_drop.tres" id="2_30a86"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l0e5q"]
 atlas = ExtResource("1_dix13")
@@ -166,7 +166,7 @@ radius = 94.521164
 
 [node name="BlueSlime" type="CharacterBody2D" unique_id=2114990315 groups=["Enemy"]]
 scale = Vector2(2, 2)
-collision_layer = 8
+collision_layer = 9
 collision_mask = 0
 script = ExtResource("1_l0e5q")
 velocidad = 60

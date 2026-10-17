@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://biuj3o0um51dd"]
+
+[ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_m2ihb"]
+[ext_resource type="Texture2D" uid="uid://c58xiyh62i0yo" path="res://assets/Gold_Resource.png" id="2_m2ihb"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_qs7gh"]
+
+[resource]
+script = ExtResource("3_qs7gh")
+name = "Poción de Fuerza Pequeña"
+category = 1
+icon = ExtResource("2_m2ihb")
+metadata/_custom_type_script = "uid://bc683lnt43io8"

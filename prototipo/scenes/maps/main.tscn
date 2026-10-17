@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c4el3b10kdldu" path="res://scenes/chars/char_enchanter.tscn" id="7_n56wl"]
 [ext_resource type="PackedScene" uid="uid://khghbb8v8djo" path="res://scenes/items/searchables/gold_ore.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://ca3hhopvjowbr" path="res://scenes/chars/char_hunter.tscn" id="8_m6k0o"]
+[ext_resource type="PackedScene" uid="uid://b37v8okdyon3f" path="res://scenes/enemies/blue_slime.tscn" id="9_ss43a"]
+[ext_resource type="PackedScene" uid="uid://mahthgvuw0a2" path="res://scenes/furniture/potion_table.tscn" id="10_00xaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tipki"]
 texture = ExtResource("1_jyhfs")
@@ -549,3 +551,9 @@ position = Vector2(303, -85)
 
 [node name="CharHunter" parent="." unique_id=1236896946 instance=ExtResource("8_m6k0o")]
 position = Vector2(-313, 224)
+
+[node name="BlueSlime" parent="." unique_id=2114990315 instance=ExtResource("9_ss43a")]
+position = Vector2(-636, 117)
+
+[node name="PotionTable" parent="." unique_id=997449038 instance=ExtResource("10_00xaj")]
+position = Vector2(-249, -22)

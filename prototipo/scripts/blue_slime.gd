@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
+const WORLD_ITEM = preload("uid://c4k0hvn78cney")
+
 @onready var attack_cd: Timer = $AttackCD
 
 @export var velocidad := 100
 @export var rango := 100
 @export var health := 100
 @export var damage := 5
-@export var loot : PackedScene
+@export var loot : ItemDefinition
 
 var direction := Vector2.ZERO
 var destino : Vector2
@@ -69,9 +71,11 @@ func update_anim():
 	get_node("AnimatedSprite2D").play(dir_anim)
 
 func die():
-	var drop = loot.instantiate()
-	drop.global_position = global_position
-	self.get_parent().call_deferred("add_child", drop)
+	#var drop = loot.instantiate()
+	var world_item : WorldItem = WORLD_ITEM.instantiate()
+	world_item.item = ItemInstance.create(loot)
+	world_item.global_position = global_position
+	self.get_parent().call_deferred("add_child", world_item)
 	call_deferred("queue_free")
 
 func move_to_attack():
@@ -86,7 +90,6 @@ func move_to_attack():
 		velocity = Vector2.ZERO
 		if attack_cd.is_stopped():
 			objetive.take_damage(damage)
-			#prints("Attacking")
 			attack_cd.start()
 
 func _on_detection_range_body_entered(body: Node2D) -> void:

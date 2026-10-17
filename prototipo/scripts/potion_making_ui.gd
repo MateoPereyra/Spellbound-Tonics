@@ -1,16 +1,28 @@
 extends Control
 
 @onready var inspection_label_result: Label = $InspectionLabelResult
-#@export var potion : PackedScene
-@export var potion_scenes : Array[PackedScene] = []
+
+#@export var potion_definitions : Array[ItemDefinition] = []
+@export_group("Pociones por tipo (2: <10 y >10)")
+@export var potions_veneno : Array[ItemDefinition] = []
+@export var potions_curacion : Array[ItemDefinition] = []
+@export var potions_resistencia : Array[ItemDefinition] = []
+@export var potions_fuerza : Array[ItemDefinition] = []
+@export var potions_mixed : Array[ItemDefinition] = []
+
+var has_veneno := false
+var has_curacion := false
+var has_resistencia := false
+var has_fuerza := false
+var is_mixed := false
 
 func _ready() -> void:
 	inspection_label_result.hide()
 
-func _on_inspection_slot_toggle_label(data: ItemData, flag: bool) -> void:
-	if flag:
-		var texto = "El item " + data.name + " tiene:\n"
-		for efecto in data.efectos:
+func _on_inspection_slot_toggle_label(item: ItemInstance, flag: bool) -> void:
+	if flag and item != null:
+		var texto = item.definition.name + " tiene:\n"
+		for efecto in item.effects:
 			texto += EffectData.EffectType.keys()[efecto.tipo] + ": " + str(efecto.valor) + "\n"
 		inspection_label_result.text = texto
 		inspection_label_result.show()
@@ -18,45 +30,119 @@ func _on_inspection_slot_toggle_label(data: ItemData, flag: bool) -> void:
 		inspection_label_result.hide()
 
 func _on_button_pressed() -> void:
+	reset_flags()
+	
 	var sumas := {} 
+	var total_puntos := 0
 	var result_slot : Slot = null
 	var used_slots : Array[Slot] = []
 	
 	for slot in get_children():
 		if slot is Slot:
-			if slot.slot_type == Slot.SlotType.NORMAL and slot.item != null:
+			if slot.slot_type == Slot.SlotType.INGREDIENTE and slot.item != null:
 				used_slots.append(slot)
-				for efecto in slot.item.efectos:
-					if sumas.has(efecto.tipo):
-						sumas[efecto.tipo] += efecto.valor
-					else:
-						sumas[efecto.tipo] = efecto.valor
+				for efecto in slot.item.effects:
+					sumas[efecto.tipo] = sumas.get(efecto.tipo, 0) + efecto.valor
+					total_puntos += efecto.valor
+					mark_type(efecto.tipo)
 			elif slot.slot_type == Slot.SlotType.RESULTADO and slot.item == null:
 				result_slot = slot
 	
-	if result_slot != null and not sumas.is_empty():
-		var data := ItemData.new()
-		#data.scene = potion
-		var tipo_dominante = get_dominant_type(sumas)
-		data.scene = potion_scenes[tipo_dominante]
-		data.name = "Poción"
-		data.efectos = []
-		
-		for tipo in sumas.keys():
-			var e := EffectData.new()
-			e.tipo = tipo
-			e.valor = sumas[tipo]
-			data.efectos.append(e)
-		
-		result_slot.item = data
-		for slot in used_slots:
-			slot.item = null
-
-func get_dominant_type(sumas: Dictionary) -> int:
-	var mejor_tipo := -1
-	var mejor_valor := -1
+	if result_slot == null or sumas.is_empty():
+		return
+	
+	resolve_mixed()
+	
+	var definicion := pick_definition(total_puntos)
+	if definicion == null:
+		push_warning("No hay definición de poción cargada para esta combinación.")
+		return
+	
+	var efectos_finales : Array[EffectData] = []
 	for tipo in sumas.keys():
-		if sumas[tipo] > mejor_valor:
-			mejor_valor = sumas[tipo]
-			mejor_tipo = tipo
-	return mejor_tipo
+		var e := EffectData.new()
+		e.tipo = tipo
+		e.valor = sumas[tipo]
+		efectos_finales.append(e)
+	
+	for slot in used_slots:
+		slot.item = null
+	
+	result_slot.item = ItemInstance.create_potion(definicion, efectos_finales)
+
+	#var tipo_dominante = get_dominant_type(sumas)
+	#if tipo_dominante >= potion_definitions.size():
+		#return
+	#
+	#var efectos_finales : Array[EffectData] = []
+	#for tipo in sumas.keys():
+		#var e := EffectData.new()
+		#e.tipo = tipo
+		#e.valor = sumas[tipo]
+		#efectos_finales.append(e)
+	#
+	#for slot in used_slots:
+		#slot.item = null
+	#
+	#result_slot.item = ItemInstance.create_potion(potion_definitions[tipo_dominante], efectos_finales)
+
+#func get_dominant_type(sumas: Dictionary) -> int:
+	#var mejor_tipo := -1
+	#var mejor_valor := -1
+	#for tipo in sumas.keys():
+		#if sumas[tipo] > mejor_valor:
+			#mejor_valor = sumas[tipo]
+			#mejor_tipo = tipo
+	#return mejor_tipo
+
+func reset_flags() -> void:
+	has_veneno = false
+	has_curacion = false
+	has_resistencia = false
+	has_fuerza = false
+	is_mixed = false
+
+func mark_type(tipo: EffectData.EffectType) -> void:
+	match tipo:
+		EffectData.EffectType.VENENO:
+			has_veneno = true
+		EffectData.EffectType.CURACION:
+			has_curacion = true
+		EffectData.EffectType.RESISTENCIA:
+			has_resistencia = true
+		EffectData.EffectType.FUERZA:
+			has_fuerza = true
+
+func resolve_mixed() -> void:
+	var cantidad := 0
+	for presente in [has_veneno, has_curacion, has_resistencia, has_fuerza]:
+		if presente:
+			cantidad += 1
+	
+	if cantidad >= 2:
+		is_mixed = true
+		has_veneno = false
+		has_curacion = false
+		has_resistencia = false
+		has_fuerza = false
+
+func get_pool() -> Array[ItemDefinition]:
+	if is_mixed:
+		return potions_mixed
+	if has_veneno:
+		return potions_veneno
+	if has_curacion:
+		return potions_curacion
+	if has_resistencia:
+		return potions_resistencia
+	if has_fuerza:
+		return potions_fuerza
+	var vacio : Array[ItemDefinition] = []
+	return vacio
+
+func pick_definition(total_puntos: int) -> ItemDefinition:
+	var pool := get_pool()
+	var indice := 1 if total_puntos > 10 else 0
+	if indice >= pool.size():
+		return null
+	return pool[indice]

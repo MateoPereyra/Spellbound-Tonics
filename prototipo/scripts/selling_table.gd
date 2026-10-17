@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @export var table_id : int = 1
 @onready var can_interact := false
-@export var potions : Array[PackedScene] = []
+#@export var potions : Array[PackedScene] = []
 
 func _ready() -> void:
 	GameData.scene_changing.connect(_on_scene_changing)
@@ -20,7 +20,7 @@ func _on_interaction_range_body_entered(body: Node2D) -> void:
 		for slot in $Node2D.get_children():
 			if slot is Slot and slot.item != null:
 				var efecto_total := 0
-				for efecto in slot.item.efectos:
+				for efecto in slot.item.effects:
 					efecto_total += efecto.valor
 				
 				var extra_total = 10 * floori(efecto_total / 5.0)
@@ -32,7 +32,6 @@ func _on_interaction_range_body_entered(body: Node2D) -> void:
 func _on_interaction_range_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		can_interact = false
-		#prints("Salio")
 
 func check_inventory():
 	var inventory = get_tree().get_first_node_in_group("Inventory")
@@ -41,19 +40,18 @@ func check_inventory():
 
 	for slot in inventory.get_slots():
 		if slot is Slot and slot.item != null:
-			if slot.item.scene in potions:
+			if slot.item.definition.category == ItemDefinition.Category.POTION:
 				asignar_a_slot_de_venta(slot.item, slot)
 
-func asignar_a_slot_de_venta(item_data: ItemData, slot_origen: Slot) -> void:
+func asignar_a_slot_de_venta(item: ItemInstance, slot_origen: Slot) -> void:
 	for slot in $Node2D.get_children():
 		if slot is Slot and slot.item == null:
-			slot.item = item_data
+			slot.item = item
 			slot_origen.item = null
-			#prints("Listo")
 			return
 
 func save_items_in_table():
-	var items : Array[ItemData] = []
+	var items : Array[ItemInstance] = []
 	
 	for slot in $Node2D.get_children():
 		if slot is Slot and slot.item != null:
@@ -65,7 +63,7 @@ func load_item_in_table():
 	if not GameData.in_table_items.has(table_id):
 		return
 	
-	var items = GameData.in_table_items[table_id]
+	var items : Array[ItemInstance] = GameData.in_table_items[table_id]
 	var slots = $Node2D.get_children()
 	
 	for i in items.size():

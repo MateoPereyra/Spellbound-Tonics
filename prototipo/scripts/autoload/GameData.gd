@@ -2,7 +2,7 @@ extends Node
 
 signal scene_changing
 
-var inventory_items : Array[ItemData] = []
+var inventory_items : Array[ItemInstance] = []
 var in_table_items : Dictionary = {}
 
 const GAME_OVER = preload("res://scenes/UI/game_over.tscn")

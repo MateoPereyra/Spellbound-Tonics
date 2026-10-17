@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ctrjvvst1jlga" path="res://assets/Bushe1.png" id="1_3u8ya"]
 [ext_resource type="PackedScene" uid="uid://cn7clxbs3d1of" path="res://scenes/components/searchable.tscn" id="2_ehqem"]
-[ext_resource type="PackedScene" uid="uid://cmpp1gnwujxf7" path="res://scenes/items/loot/loot_mushroom.tscn" id="3_tu87o"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_uhjcy"]
+[ext_resource type="Resource" uid="uid://bh353e34rju4b" path="res://items_tres/loot/mushroom.tres" id="4_4dwt2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dw7mk"]
 atlas = ExtResource("1_3u8ya")
@@ -86,4 +87,4 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_5w4ld")
 
 [node name="Searchable" parent="." unique_id=1817318536 instance=ExtResource("2_ehqem")]
-loot_pool = Array[PackedScene]([ExtResource("3_tu87o")])
+loot_pool = Array[ExtResource("3_uhjcy")]([ExtResource("4_4dwt2")])

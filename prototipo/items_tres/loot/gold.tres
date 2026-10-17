@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://b17u1qoudinlm"]
+
+[ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_gpvyn"]
+[ext_resource type="Texture2D" uid="uid://c58xiyh62i0yo" path="res://assets/Gold_Resource.png" id="2_56sa5"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_cowym"]
+
+[sub_resource type="Resource" id="Resource_ckotg"]
+script = ExtResource("1_gpvyn")
+tipo = 2
+max_value = 5
+metadata/_custom_type_script = "uid://cic8tj2gwlymw"
+
+[resource]
+script = ExtResource("3_cowym")
+name = "Oro"
+is_ingredient = true
+icon = ExtResource("2_56sa5")
+effect_ranges = Array[ExtResource("1_gpvyn")]([SubResource("Resource_ckotg")])
+metadata/_custom_type_script = "uid://bc683lnt43io8"
