@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0lxvqbrpoduo"]
 
 [ext_resource type="Script" uid="uid://yswo2jt6fflc" path="res://scripts/store_sign.gd" id="1_jo0lx"]
-[ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/Wooden_House_Walls_Tilset.png" id="1_m18nb"]
+[ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/World/Wooden_House_Walls_Tilset.png" id="1_m18nb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7me2p"]
 size = Vector2(16, 16)

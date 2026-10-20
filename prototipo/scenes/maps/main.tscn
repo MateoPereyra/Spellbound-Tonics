@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bvy3bp2d02jof"]
 
-[ext_resource type="Texture2D" uid="uid://6g03673gvglh" path="res://assets/Grass.png" id="1_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://6g03673gvglh" path="res://assets/World/Grass.png" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://qqfcqnrprv46" path="res://scenes/chars/nyx.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://clgj74fsihust" path="res://scenes/items/searchables/bush.tscn" id="4_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cayd7f5e62yt1" path="res://scenes/items/searchables/big_rock.tscn" id="5_tbgi4"]

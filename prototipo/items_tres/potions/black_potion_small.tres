@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://cv2ix5e78cq2w"]
 
 [ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_m0wrw"]
-[ext_resource type="Texture2D" uid="uid://cdrswjt8m8ft8" path="res://assets/black_droplet.png" id="2_m0wrw"]
+[ext_resource type="Texture2D" uid="uid://cdrswjt8m8ft8" path="res://assets/potions/black_droplet.png" id="2_m0wrw"]
 [ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_bnpkx"]
 
 [resource]

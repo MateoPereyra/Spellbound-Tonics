@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 @export var damage := 25
 @export var speed := 300
 
@@ -7,6 +9,9 @@ var direction : Vector2 = Vector2.ZERO:
 	set(value):
 		direction = value
 		rotation = direction.angle() + PI / 2
+
+func _ready() -> void:
+	audio.pitch_scale = randf_range(0.5, 1.2)
 
 func _physics_process(delta: float) -> void:
 	global_position += direction * speed * delta

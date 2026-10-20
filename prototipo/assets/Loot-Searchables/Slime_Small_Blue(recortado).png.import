@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hnqbk6q2nwja"
-path="res://.godot/imported/green_heart.png-d9e31716840a5a258b142d90fe93385c.ctex"
+uid="uid://vvo86ecj0ohg"
+path="res://.godot/imported/Slime_Small_Blue(recortado).png-d60c13595956a04f1fde0d873be751f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/green_heart.png"
-dest_files=["res://.godot/imported/green_heart.png-d9e31716840a5a258b142d90fe93385c.ctex"]
+source_file="res://assets/Loot-Searchables/Slime_Small_Blue(recortado).png"
+dest_files=["res://.godot/imported/Slime_Small_Blue(recortado).png-d60c13595956a04f1fde0d873be751f1.ctex"]
 
 [params]
 

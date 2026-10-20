@@ -130,11 +130,11 @@ func save_money():
 
 func load_money():
 	money = GameData.saved_money
-	money_label.text = str(money)
+	money_label.text = "$" + str(money)
 
 func _on_scene_changing() -> void:
 	save_money()
 
 func update_money(amount: int):
 	money += amount
-	money_label.text = str(money)
+	money_label.text = "$" + str(money)

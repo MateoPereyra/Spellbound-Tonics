@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba43lqh4scx3m"
-path="res://.godot/imported/Gold Stone 6.png-ce6089b33cc5fd133f767331a15ca082.ctex"
+uid="uid://bys7dkua0vlhy"
+path="res://.godot/imported/black_heart.png-2013433c9b012396999370503e6310ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gold Stone 6.png"
-dest_files=["res://.godot/imported/Gold Stone 6.png-ce6089b33cc5fd133f767331a15ca082.ctex"]
+source_file="res://assets/potions/black_heart.png"
+dest_files=["res://.godot/imported/black_heart.png-2013433c9b012396999370503e6310ba.ctex"]
 
 [params]
 

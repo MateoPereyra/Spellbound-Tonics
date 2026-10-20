@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://371rvvtjcquq"]
 
 [ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_2e1ns"]
-[ext_resource type="Texture2D" uid="uid://ba43lqh4scx3m" path="res://assets/Gold Stone 6.png" id="2_2e1ns"]
+[ext_resource type="Texture2D" uid="uid://c6lmqolmdpix1" path="res://assets/potions/yellow_heart.png" id="2_2e1ns"]
 [ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_lhk0s"]
 
 [resource]

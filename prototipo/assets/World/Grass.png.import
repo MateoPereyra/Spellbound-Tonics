@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1uxvnybyho0a"
-path="res://.godot/imported/Wooden_House_Walls_Tilset.png-c437bffd4f151550fc332d175736304b.ctex"
+uid="uid://6g03673gvglh"
+path="res://.godot/imported/Grass.png-0dd4989a5518d6c459b72923ff106d59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wooden_House_Walls_Tilset.png"
-dest_files=["res://.godot/imported/Wooden_House_Walls_Tilset.png-c437bffd4f151550fc332d175736304b.ctex"]
+source_file="res://assets/World/Grass.png"
+dest_files=["res://.godot/imported/Grass.png-0dd4989a5518d6c459b72923ff106d59.ctex"]
 
 [params]
 

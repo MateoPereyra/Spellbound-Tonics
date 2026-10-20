@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bys7dkua0vlhy"
-path="res://.godot/imported/black_heart.png-d2130e8b41c02186d91421fac4076d6e.ctex"
+uid="uid://kxpodr8eoae5"
+path="res://.godot/imported/blue_heart.png-d3977f87b2a899ded88fecea7badbf33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/black_heart.png"
-dest_files=["res://.godot/imported/black_heart.png-d2130e8b41c02186d91421fac4076d6e.ctex"]
+source_file="res://assets/potions/blue_heart.png"
+dest_files=["res://.godot/imported/blue_heart.png-d3977f87b2a899ded88fecea7badbf33.ctex"]
 
 [params]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_s5j0r"]
 [ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="2_3moud"]
-[ext_resource type="Texture2D" uid="uid://bk8estb7wj0qt" path="res://assets/red_heart.png" id="2_tnsl6"]
+[ext_resource type="Texture2D" uid="uid://bk8estb7wj0qt" path="res://assets/potions/red_heart.png" id="2_tnsl6"]
 
 [resource]
 script = ExtResource("2_3moud")

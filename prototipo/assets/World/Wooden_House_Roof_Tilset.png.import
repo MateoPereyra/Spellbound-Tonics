@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vvo86ecj0ohg"
-path="res://.godot/imported/Slime_Small_Blue(recortado).png-91635debc4dacb459d1f236feb4b774e.ctex"
+uid="uid://bvcbourxrgp44"
+path="res://.godot/imported/Wooden_House_Roof_Tilset.png-a88d096f26593dec6ef215abcb004a21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Slime_Small_Blue(recortado).png"
-dest_files=["res://.godot/imported/Slime_Small_Blue(recortado).png-91635debc4dacb459d1f236feb4b774e.ctex"]
+source_file="res://assets/World/Wooden_House_Roof_Tilset.png"
+dest_files=["res://.godot/imported/Wooden_House_Roof_Tilset.png-a88d096f26593dec6ef215abcb004a21.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3pbtcv1fhkjh"]
 
-[ext_resource type="Texture2D" uid="uid://bk8estb7wj0qt" path="res://assets/red_heart.png" id="1_p4ah4"]
+[ext_resource type="Texture2D" uid="uid://bk8estb7wj0qt" path="res://assets/potions/red_heart.png" id="1_p4ah4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6ep4"]
 radius = 11.0

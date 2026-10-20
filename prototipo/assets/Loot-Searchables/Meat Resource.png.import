@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctrjvvst1jlga"
-path="res://.godot/imported/Bushe1.png-f5d836a17fd7c65291f985c4f504bcfb.ctex"
+uid="uid://vr4clgl15alr"
+path="res://.godot/imported/Meat Resource.png-6e244b20308d3ebf3c775127b27b0fa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bushe1.png"
-dest_files=["res://.godot/imported/Bushe1.png-f5d836a17fd7c65291f985c4f504bcfb.ctex"]
+source_file="res://assets/Loot-Searchables/Meat Resource.png"
+dest_files=["res://.godot/imported/Meat Resource.png-6e244b20308d3ebf3c775127b27b0fa7.ctex"]
 
 [params]
 

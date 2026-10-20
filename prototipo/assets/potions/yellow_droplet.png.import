@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c58xiyh62i0yo"
-path="res://.godot/imported/Gold_Resource.png-7601fbd7b89487d5220116b179b01950.ctex"
+uid="uid://bkw7rc8mspaos"
+path="res://.godot/imported/yellow_droplet.png-4d92b664f0c01b941ea253806477aa1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gold_Resource.png"
-dest_files=["res://.godot/imported/Gold_Resource.png-7601fbd7b89487d5220116b179b01950.ctex"]
+source_file="res://assets/potions/yellow_droplet.png"
+dest_files=["res://.godot/imported/yellow_droplet.png-4d92b664f0c01b941ea253806477aa1f.ctex"]
 
 [params]
 

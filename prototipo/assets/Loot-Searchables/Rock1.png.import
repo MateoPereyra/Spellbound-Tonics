@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fbjyc4si8c2r"
-path="res://.godot/imported/red_droplet.png-798d13d7fb65076e88466583e14bab5a.ctex"
+uid="uid://clfmf1fgyoq41"
+path="res://.godot/imported/Rock1.png-fa6aa47bc841dcf8f935ec1544af0086.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/red_droplet.png"
-dest_files=["res://.godot/imported/red_droplet.png-798d13d7fb65076e88466583e14bab5a.ctex"]
+source_file="res://assets/Loot-Searchables/Rock1.png"
+dest_files=["res://.godot/imported/Rock1.png-fa6aa47bc841dcf8f935ec1544af0086.ctex"]
 
 [params]
 

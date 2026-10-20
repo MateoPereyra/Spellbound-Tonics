@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bikhrxrxccsbg"
-path="res://.godot/imported/Stylized_Top-Down_House (Pixel Art Asset).png-f6738a0e70daa6ed6c5e08afea9755ad.ctex"
+path="res://.godot/imported/Stylized_Top-Down_House (Pixel Art Asset).png-c5fc0bf51f23766eced5fba5a89b6569.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Stylized_Top-Down_House (Pixel Art Asset).png"
-dest_files=["res://.godot/imported/Stylized_Top-Down_House (Pixel Art Asset).png-f6738a0e70daa6ed6c5e08afea9755ad.ctex"]
+source_file="res://assets/World/Stylized_Top-Down_House (Pixel Art Asset).png"
+dest_files=["res://.godot/imported/Stylized_Top-Down_House (Pixel Art Asset).png-c5fc0bf51f23766eced5fba5a89b6569.ctex"]
 
 [params]
 

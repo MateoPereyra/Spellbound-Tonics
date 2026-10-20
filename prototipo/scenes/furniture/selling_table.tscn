@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dy0d8703vs0cu"]
 
-[ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/Wooden_House_Walls_Tilset.png" id="1_fovjp"]
+[ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/World/Wooden_House_Walls_Tilset.png" id="1_fovjp"]
 [ext_resource type="Script" uid="uid://cykoaqmko7c0n" path="res://scripts/selling_table.gd" id="1_pp230"]
 [ext_resource type="PackedScene" uid="uid://bqfficeo0nuai" path="res://scenes/items/potions/black_potion.tscn" id="2_rfatm"]
 [ext_resource type="PackedScene" uid="uid://c7gbb83xjoys5" path="res://scenes/items/potions/black_potion_small.tscn" id="3_0eiv3"]

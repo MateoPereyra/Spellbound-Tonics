@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6g03673gvglh"
-path="res://.godot/imported/Grass.png-dd5cb87a98b967a0aae631f5db6acd40.ctex"
+uid="uid://t5r8ec740rt3"
+path="res://.godot/imported/green_droplet.png-818ee9cbc4f169b533519bef10c3e1b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Grass.png"
-dest_files=["res://.godot/imported/Grass.png-dd5cb87a98b967a0aae631f5db6acd40.ctex"]
+source_file="res://assets/potions/green_droplet.png"
+dest_files=["res://.godot/imported/green_droplet.png-818ee9cbc4f169b533519bef10c3e1b8.ctex"]
 
 [params]
 

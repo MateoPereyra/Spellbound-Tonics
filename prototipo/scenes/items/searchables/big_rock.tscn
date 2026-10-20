@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cayd7f5e62yt1"]
 
-[ext_resource type="Texture2D" uid="uid://btrksqfvexl8u" path="res://assets/Rock4.png" id="1_m6bll"]
+[ext_resource type="Texture2D" uid="uid://btrksqfvexl8u" path="res://assets/Loot-Searchables/Rock4.png" id="1_m6bll"]
 [ext_resource type="PackedScene" uid="uid://cn7clxbs3d1of" path="res://scenes/components/searchable.tscn" id="2_oppl4"]
 [ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_ye1ft"]
 [ext_resource type="Resource" uid="uid://bnsjm21nk6w5d" path="res://items_tres/loot/rock.tres" id="4_u8k6m"]

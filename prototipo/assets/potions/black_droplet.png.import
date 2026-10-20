@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7d15n4pikim5"
-path="res://.godot/imported/Tree2.png-5018ee3a344d3d425f4b6b992fecdf52.ctex"
+uid="uid://cdrswjt8m8ft8"
+path="res://.godot/imported/black_droplet.png-5b2ab657375bff7b960bafc1ddce73ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tree2.png"
-dest_files=["res://.godot/imported/Tree2.png-5018ee3a344d3d425f4b6b992fecdf52.ctex"]
+source_file="res://assets/potions/black_droplet.png"
+dest_files=["res://.godot/imported/black_droplet.png-5b2ab657375bff7b960bafc1ddce73ff.ctex"]
 
 [params]
 

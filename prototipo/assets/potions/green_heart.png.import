@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdrswjt8m8ft8"
-path="res://.godot/imported/black_droplet.png-46c4ea194e84973ead640b4979cb87b5.ctex"
+uid="uid://hnqbk6q2nwja"
+path="res://.godot/imported/green_heart.png-85dea0652f0445fe4b7abb48a7f647c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/black_droplet.png"
-dest_files=["res://.godot/imported/black_droplet.png-46c4ea194e84973ead640b4979cb87b5.ctex"]
+source_file="res://assets/potions/green_heart.png"
+dest_files=["res://.godot/imported/green_heart.png-85dea0652f0445fe4b7abb48a7f647c4.ctex"]
 
 [params]
 

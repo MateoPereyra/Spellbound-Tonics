@@ -2,9 +2,13 @@ extends Control
 
 signal inventory_filled()
 
+var just_started := true
+
 func _ready() -> void:
 	GameData.scene_changing.connect(_on_scene_changing)
-	load_inventory()
+	if not GameData.just_started:
+		load_inventory()
+	GameData.just_started = false
 
 func _on_nyx_picked(item: ItemInstance) -> void:
 	var slots = get_slots()

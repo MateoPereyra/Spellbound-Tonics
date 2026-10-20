@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mahthgvuw0a2"]
 
-[ext_resource type="Texture2D" uid="uid://b5jtxpdu6t175" path="res://assets/Wooden House.png" id="1_ht51q"]
+[ext_resource type="Texture2D" uid="uid://b5jtxpdu6t175" path="res://assets/World/Wooden House.png" id="1_ht51q"]
 [ext_resource type="Script" uid="uid://q1rlc027q51q" path="res://scripts/potion_table.gd" id="1_vqask"]
 [ext_resource type="PackedScene" uid="uid://d2u8vo4hrpv5x" path="res://scenes/UI/potion_making_ui.tscn" id="2_1bavf"]
 

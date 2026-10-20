@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk8estb7wj0qt"
-path="res://.godot/imported/red_heart.png-4e08469b3d359349b2c06f684c4557ab.ctex"
+uid="uid://ba43lqh4scx3m"
+path="res://.godot/imported/Gold Stone 6.png-8e922220065b47856c0441a703cdf241.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/red_heart.png"
-dest_files=["res://.godot/imported/red_heart.png-4e08469b3d359349b2c06f684c4557ab.ctex"]
+source_file="res://assets/Loot-Searchables/Gold Stone 6.png"
+dest_files=["res://.godot/imported/Gold Stone 6.png-8e922220065b47856c0441a703cdf241.ctex"]
 
 [params]
 

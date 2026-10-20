@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clgj74fsihust"]
 
-[ext_resource type="Texture2D" uid="uid://ctrjvvst1jlga" path="res://assets/Bushe1.png" id="1_3u8ya"]
+[ext_resource type="Texture2D" uid="uid://ctrjvvst1jlga" path="res://assets/Loot-Searchables/Bushe1.png" id="1_3u8ya"]
 [ext_resource type="PackedScene" uid="uid://cn7clxbs3d1of" path="res://scenes/components/searchable.tscn" id="2_ehqem"]
 [ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_uhjcy"]
 [ext_resource type="Resource" uid="uid://bh353e34rju4b" path="res://items_tres/loot/mushroom.tres" id="4_4dwt2"]
