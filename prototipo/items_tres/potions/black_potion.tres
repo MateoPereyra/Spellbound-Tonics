@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://cl8sg8txdviwl"]
+
+[ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_ltcfg"]
+[ext_resource type="Texture2D" uid="uid://bys7dkua0vlhy" path="res://assets/potions/black_heart.png" id="2_ltcfg"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_ss82w"]
+
+[resource]
+script = ExtResource("3_ss82w")
+name = "Poción Mixta Mediana"
+category = 1
+icon = ExtResource("2_ltcfg")
+metadata/_custom_type_script = "uid://bc683lnt43io8"

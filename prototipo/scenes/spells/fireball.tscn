@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl8l2up04o5f7" path="res://scripts/fireball.gd" id="1_1gl40"]
 [ext_resource type="Texture2D" uid="uid://3iolispchcrr" path="res://assets/FireballSpr.png" id="2_cb14k"]
+[ext_resource type="AudioStream" uid="uid://clmo2mswtwfws" path="res://audio/431174__blankened__fireball-explosion.wav" id="3_fnao3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7me2p"]
 radius = 11.0
@@ -24,6 +25,10 @@ shape = SubResource("CapsuleShape2D_7me2p")
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2124149431]
+stream = ExtResource("3_fnao3")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

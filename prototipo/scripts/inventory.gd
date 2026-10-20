@@ -2,17 +2,20 @@ extends Control
 
 signal inventory_filled()
 
+var just_started := true
+
 func _ready() -> void:
 	GameData.scene_changing.connect(_on_scene_changing)
-	load_inventory()
+	if not GameData.just_started:
+		load_inventory()
+	GameData.just_started = false
 
-func _on_nyx_picked(item_data: ItemData) -> void:
-	var slots = $PanelContainer/GridContainer.get_children()
-	
+func _on_nyx_picked(item: ItemInstance) -> void:
+	var slots = get_slots()
 	for i in slots.size():
 		var slot : Slot = slots[i]
 		if slot.item == null:
-			slot.item = item_data
+			slot.item = item
 			if i == slots.size() - 1:
 				inventory_filled.emit()
 			return

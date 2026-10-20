@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
+const WORLD_ITEM = preload("uid://c4k0hvn78cney")
+
 @onready var attack_cd: Timer = $AttackCD
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var velocidad := 100
 @export var rango := 100
 @export var health := 100
 @export var damage := 5
-@export var loot : PackedScene
+@export var loot : ItemDefinition
 
 var direction := Vector2.ZERO
 var destino : Vector2
@@ -14,6 +17,7 @@ var has_destino := false
 var espera := false
 var enemie_on_sight := false
 var objetive : Node2D
+var attacking := false
 
 func _ready() -> void:
 	generar_nuevo_destino()
@@ -69,9 +73,10 @@ func update_anim():
 	get_node("AnimatedSprite2D").play(dir_anim)
 
 func die():
-	var drop = loot.instantiate()
-	drop.global_position = global_position
-	self.get_parent().call_deferred("add_child", drop)
+	var world_item : WorldItem = WORLD_ITEM.instantiate()
+	world_item.item = ItemInstance.create(loot)
+	world_item.global_position = global_position
+	self.get_parent().call_deferred("add_child", world_item)
 	call_deferred("queue_free")
 
 func move_to_attack():
@@ -79,14 +84,15 @@ func move_to_attack():
 	
 	var distance = global_position.distance_to(objetive.global_position)
 	
-	if distance > 10:
+	if !attacking:
 		velocity = direction * velocidad
 		move_and_slide()
 	else:
 		velocity = Vector2.ZERO
 		if attack_cd.is_stopped():
+			audio.pitch_scale = randf_range(0.8, 1.3)
+			audio.play()
 			objetive.take_damage(damage)
-			#prints("Attacking")
 			attack_cd.start()
 
 func _on_detection_range_body_entered(body: Node2D) -> void:
@@ -94,8 +100,15 @@ func _on_detection_range_body_entered(body: Node2D) -> void:
 		enemie_on_sight = true
 		objetive = body
 
-
 func _on_detection_range_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		enemie_on_sight = false
 		objetive = null
+
+func _on_attack_range_body_entered(body: Node2D) -> void:
+	if body == objetive:
+		attacking = true
+
+func _on_attack_range_body_exited(body: Node2D) -> void:
+	if body == objetive:
+		attacking = false

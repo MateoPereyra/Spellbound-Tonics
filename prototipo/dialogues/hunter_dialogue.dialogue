@@ -9,14 +9,14 @@ Hunter: Qué?
 Hunter: Hey, necesito que me consigas unas cosas. Te pagaré si cumples con lo pedido.
 - Claro, que necesitas?
 	do set_mission_vars()
-	Traeme una {{nombre_pedido}}. Te pagaré {{pago}} de oro.
+	Traeme una {{item_pedido.name}}. Te pagaré {{pago}} de oro.
 - Lo siento, estoy ocupado. => END
 => END
 
 ~ on_mission
 Hunter: Ya tienes lo que te pedí?
 - No
-	Hunter: Sigo esperando mi {{nombre_pedido}}
+	Hunter: Sigo esperando mi {{item_pedido.name}}
 - Si
 	if can_complete_mission()
 		Hunter: Ten tu dinero.

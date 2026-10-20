@@ -1,25 +1,29 @@
 class_name Slot extends PanelContainer
 
-signal toggle_label(data: ItemData, flag: bool)
+signal toggle_label(item: ItemInstance, flag: bool)
 
 enum SlotType { NORMAL, INGREDIENTE, RESULTADO }
 
 @export var slot_type : SlotType = SlotType.NORMAL
 @onready var texture_rect: TextureRect = $TextureRect
 
-@export var item : ItemData = null:
+@export var item : ItemInstance = null:
 	set(value):
 		item = value
-		
-		if value != null:
-			var temp_instance = value.scene.instantiate()
-			$TextureRect.texture = temp_instance.get_node("Sprite2D").texture
-			temp_instance.queue_free()
-		else:
-			$TextureRect.texture = null
-		
-		if slot_type == SlotType.INGREDIENTE:
+		_refresh()
+		if slot_type == SlotType.NORMAL or slot_type == SlotType.RESULTADO:
 			toggle_label.emit(value, value != null)
+
+func _ready() -> void:
+	_refresh()
+
+func _refresh() -> void:
+	if texture_rect == null:
+		return
+	if item != null:
+		texture_rect.texture = item.definition.icon
+	else:
+		texture_rect.texture = null
 
 func get_preview():
 	var preview_texture = TextureRect.new()
@@ -37,7 +41,11 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	if slot_type == SlotType.RESULTADO:
 		return false
-	return data is Slot
+	if not data is Slot:
+		return false
+	if slot_type == SlotType.INGREDIENTE and data.item != null and not data.item.definition.is_ingredient:
+		return false
+	return true
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var temp = item

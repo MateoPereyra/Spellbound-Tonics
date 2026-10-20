@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bf0mxslmkyjru" path="res://assets/64x64 adventure characters.png" id="1_igdrc"]
 [ext_resource type="Script" uid="uid://vg21grgol2gy" path="res://scripts/char_hunter.gd" id="1_w633n"]
 [ext_resource type="Resource" uid="uid://dokhaovosiaqy" path="res://dialogues/hunter_dialogue.dialogue" id="2_701c2"]
-[ext_resource type="PackedScene" uid="uid://daucr5w86f0ga" path="res://scenes/items/potions/green_potion.tscn" id="3_364yb"]
-[ext_resource type="PackedScene" uid="uid://bqfficeo0nuai" path="res://scenes/items/potions/black_potion.tscn" id="4_4d4v6"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_frolx"]
+[ext_resource type="Resource" uid="uid://cg1sheirw4dfy" path="res://items_tres/potions/purple_potion_small.tres" id="4_5xrvc"]
+[ext_resource type="Resource" uid="uid://02t3qfyc1fy3" path="res://items_tres/potions/purple_potion.tres" id="5_0wo4u"]
+[ext_resource type="Resource" uid="uid://cv2ix5e78cq2w" path="res://items_tres/potions/black_potion_small.tres" id="6_t6l64"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qpyw1"]
 height = 58.0
@@ -18,10 +20,10 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="CharHunter" type="CharacterBody2D" unique_id=1236896946]
 script = ExtResource("1_w633n")
+own_name = "Hunter"
 dialogue_file = ExtResource("2_701c2")
-items_a_pedir = Array[PackedScene]([ExtResource("3_364yb"), ExtResource("4_4d4v6")])
-pagos_de_mision = Array[int]([100, 120])
-nombres_de_items = Array[String](["Poción de veneno", "Poción de resistencia"])
+items_a_pedir = Array[ExtResource("3_frolx")]([ExtResource("4_5xrvc"), ExtResource("5_0wo4u"), ExtResource("6_t6l64")])
+pagos_de_mision = Array[int]([90, 120, 130])
 dialogos_disponibles = Array[String](["start", "mission_1"])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2050602012]

@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://dhfmnhrfmol6v"]
 
-[ext_resource type="Texture2D" uid="uid://6g03673gvglh" path="res://assets/Grass.png" id="1_e0pqc"]
+[ext_resource type="Texture2D" uid="uid://6g03673gvglh" path="res://assets/World/Grass.png" id="1_e0pqc"]
 [ext_resource type="PackedScene" uid="uid://qqfcqnrprv46" path="res://scenes/chars/nyx.tscn" id="2_7hnye"]
-[ext_resource type="Texture2D" uid="uid://c7d15n4pikim5" path="res://assets/Tree2.png" id="2_xdu12"]
+[ext_resource type="Texture2D" uid="uid://c7d15n4pikim5" path="res://assets/World/Tree2.png" id="2_xdu12"]
 [ext_resource type="PackedScene" uid="uid://b37v8okdyon3f" path="res://scenes/enemies/blue_slime.tscn" id="3_6l05m"]
-[ext_resource type="Texture2D" uid="uid://bikhrxrxccsbg" path="res://assets/Stylized_Top-Down_House (Pixel Art Asset).png" id="4_knnp0"]
+[ext_resource type="Texture2D" uid="uid://bikhrxrxccsbg" path="res://assets/World/Stylized_Top-Down_House (Pixel Art Asset).png" id="4_knnp0"]
 [ext_resource type="PackedScene" uid="uid://clgj74fsihust" path="res://scenes/items/searchables/bush.tscn" id="8_ototb"]
 [ext_resource type="PackedScene" uid="uid://khghbb8v8djo" path="res://scenes/items/searchables/gold_ore.tscn" id="9_kb6h3"]
 [ext_resource type="PackedScene" uid="uid://doxkbg76kiumq" path="res://scenes/chars/char_druid.tscn" id="9_vnl1g"]

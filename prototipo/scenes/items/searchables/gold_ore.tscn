@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://khghbb8v8djo"]
 
-[ext_resource type="Texture2D" uid="uid://ba43lqh4scx3m" path="res://assets/Gold Stone 6.png" id="1_otydu"]
+[ext_resource type="Texture2D" uid="uid://ba43lqh4scx3m" path="res://assets/Loot-Searchables/Gold Stone 6.png" id="1_otydu"]
 [ext_resource type="PackedScene" uid="uid://cn7clxbs3d1of" path="res://scenes/components/searchable.tscn" id="2_ewsvt"]
-[ext_resource type="PackedScene" uid="uid://oesdaoo3lvql" path="res://scenes/items/loot/loot_gold.tscn" id="3_ewsvt"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_mrcej"]
+[ext_resource type="Resource" uid="uid://b17u1qoudinlm" path="res://items_tres/loot/gold.tres" id="4_ewjsd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
 radius = 34.058773
@@ -17,5 +18,5 @@ position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_7me2p")
 
 [node name="Searchable" parent="." unique_id=1817318536 instance=ExtResource("2_ewsvt")]
-loot_pool = Array[PackedScene]([ExtResource("3_ewsvt")])
+loot_pool = Array[ExtResource("3_mrcej")]([ExtResource("4_ewjsd")])
 metadata/_edit_lock_ = true

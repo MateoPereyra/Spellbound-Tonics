@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://d3evop4uu1ba8"]
+
+[ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_0hvb5"]
+[ext_resource type="Texture2D" uid="uid://vvo86ecj0ohg" path="res://assets/Loot-Searchables/Slime_Small_Blue(recortado).png" id="2_wdnw4"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_b3nhr"]
+
+[sub_resource type="Resource" id="Resource_ckotg"]
+script = ExtResource("1_0hvb5")
+metadata/_custom_type_script = "uid://cic8tj2gwlymw"
+
+[resource]
+script = ExtResource("3_b3nhr")
+name = "Slime"
+is_ingredient = true
+icon = ExtResource("2_wdnw4")
+effect_ranges = Array[ExtResource("1_0hvb5")]([SubResource("Resource_ckotg")])
+metadata/_custom_type_script = "uid://bc683lnt43io8"

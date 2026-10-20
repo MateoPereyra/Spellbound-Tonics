@@ -2,10 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://ddtqe1tqhwmhm" path="res://scenes/UI/new_slot.tscn" id="1_0kkba"]
 [ext_resource type="Script" uid="uid://dksemkv8bjfpl" path="res://scripts/potion_making_ui.gd" id="1_g5y8j"]
-[ext_resource type="PackedScene" uid="uid://daucr5w86f0ga" path="res://scenes/items/potions/green_potion.tscn" id="2_5ev38"]
-[ext_resource type="PackedScene" uid="uid://bqfficeo0nuai" path="res://scenes/items/potions/black_potion.tscn" id="2_7yfnn"]
-[ext_resource type="PackedScene" uid="uid://cv45lvrup1yb1" path="res://scenes/items/potions/green_potion_small.tscn" id="2_dmm8m"]
-[ext_resource type="PackedScene" uid="uid://c3pbtcv1fhkjh" path="res://scenes/items/potions/red_potion.tscn" id="3_o86ap"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="2_o86ap"]
+[ext_resource type="Resource" uid="uid://cg1sheirw4dfy" path="res://items_tres/potions/purple_potion_small.tres" id="3_wlg1h"]
+[ext_resource type="Resource" uid="uid://j3wy61gxpr60" path="res://items_tres/potions/green_potion.tres" id="3_yey0u"]
+[ext_resource type="Resource" uid="uid://cv2ix5e78cq2w" path="res://items_tres/potions/black_potion_small.tres" id="4_krdw7"]
+[ext_resource type="Resource" uid="uid://02t3qfyc1fy3" path="res://items_tres/potions/purple_potion.tres" id="4_ohunk"]
+[ext_resource type="Resource" uid="uid://dp6yuv8dnwilj" path="res://items_tres/potions/red_potion.tres" id="5_mcjkk"]
+[ext_resource type="Resource" uid="uid://bbmdx8ae1k3en" path="res://items_tres/potions/red_potion_small.tres" id="6_0nmy1"]
+[ext_resource type="Resource" uid="uid://va5yfdho4n83" path="res://items_tres/potions/green_potion_small.tres" id="7_x44au"]
+[ext_resource type="Resource" uid="uid://biuj3o0um51dd" path="res://items_tres/potions/yelloy_potion_small.tres" id="9_8na5l"]
+[ext_resource type="Resource" uid="uid://371rvvtjcquq" path="res://items_tres/potions/yellow_potion.tres" id="10_v6tm5"]
+[ext_resource type="Resource" uid="uid://cl8sg8txdviwl" path="res://items_tres/potions/black_potion.tres" id="12_lk5ub"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c6ep4"]
 font_size = 20
@@ -20,7 +27,11 @@ grow_vertical = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 script = ExtResource("1_g5y8j")
-potion_scenes = Array[PackedScene]([ExtResource("2_5ev38"), ExtResource("3_o86ap"), ExtResource("2_7yfnn"), ExtResource("2_dmm8m")])
+potions_veneno = Array[ExtResource("2_o86ap")]([ExtResource("3_wlg1h"), ExtResource("4_ohunk")])
+potions_curacion = Array[ExtResource("2_o86ap")]([ExtResource("6_0nmy1"), ExtResource("5_mcjkk")])
+potions_resistencia = Array[ExtResource("2_o86ap")]([ExtResource("7_x44au"), ExtResource("3_yey0u")])
+potions_fuerza = Array[ExtResource("2_o86ap")]([ExtResource("9_8na5l"), ExtResource("10_v6tm5")])
+potions_mixed = Array[ExtResource("2_o86ap")]([ExtResource("4_krdw7"), ExtResource("12_lk5ub")])
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=890437830]
@@ -49,6 +60,7 @@ offset_left = -0.480011
 offset_top = -0.21601868
 offset_right = -0.24005127
 offset_bottom = 0.0960083
+slot_type = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="NewSlot3" parent="." unique_id=1207325415 instance=ExtResource("1_0kkba")]
@@ -63,6 +75,7 @@ offset_left = 0.007965088
 offset_top = 0.25598145
 offset_right = -0.26400757
 offset_bottom = 0.0960083
+slot_type = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="NewSlot4" parent="." unique_id=1831707298 instance=ExtResource("1_0kkba")]
@@ -79,6 +92,7 @@ offset_right = -0.26400757
 offset_bottom = 0.0960083
 grow_horizontal = 1
 grow_vertical = 1
+slot_type = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="InspectionSlot" parent="." unique_id=2061044706 instance=ExtResource("1_0kkba")]
@@ -96,7 +110,6 @@ offset_bottom = 60.303955
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(0.6, 0.6)
-slot_type = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ResultSlot" parent="." unique_id=1359337231 instance=ExtResource("1_0kkba")]

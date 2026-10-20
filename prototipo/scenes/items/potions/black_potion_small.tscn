@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7gbb83xjoys5"]
 
-[ext_resource type="Texture2D" uid="uid://cdrswjt8m8ft8" path="res://assets/black_droplet.png" id="1_pnpmo"]
+[ext_resource type="Texture2D" uid="uid://cdrswjt8m8ft8" path="res://assets/potions/black_droplet.png" id="1_pnpmo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7me2p"]
 

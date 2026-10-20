@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://vxhan521qyxl"]
 
-[ext_resource type="Texture2D" uid="uid://b5jtxpdu6t175" path="res://assets/Wooden House.png" id="1_qtlar"]
+[ext_resource type="Texture2D" uid="uid://b5jtxpdu6t175" path="res://assets/World/Wooden House.png" id="1_qtlar"]
 [ext_resource type="PackedScene" uid="uid://qqfcqnrprv46" path="res://scenes/chars/nyx.tscn" id="2_rk7hg"]
-[ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/Wooden_House_Walls_Tilset.png" id="3_rntoh"]
+[ext_resource type="Texture2D" uid="uid://1uxvnybyho0a" path="res://assets/World/Wooden_House_Walls_Tilset.png" id="3_rntoh"]
 [ext_resource type="PackedScene" uid="uid://dy0d8703vs0cu" path="res://scenes/furniture/selling_table.tscn" id="4_3scp5"]
 [ext_resource type="PackedScene" uid="uid://b0lxvqbrpoduo" path="res://scenes/furniture/store_sign.tscn" id="5_pkxii"]
 [ext_resource type="PackedScene" uid="uid://mahthgvuw0a2" path="res://scenes/furniture/potion_table.tscn" id="6_v00u0"]

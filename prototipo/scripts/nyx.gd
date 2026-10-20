@@ -14,14 +14,14 @@ extends CharacterBody2D
 @export var available_spells : Array[PackedScene] = []
 @export var money := 0
 
-var objeto_a_agarrar : Array[StaticBody2D] = []
+var objeto_a_agarrar : Array[WorldItem] = []
 var inventory_full := false
 var current_spell
 var can_use_spell := true
 var is_interacting := false
 var is_menu_visible := false
 
-signal picked(item_data: ItemData)
+signal picked(item: ItemInstance)
 
 func _ready() -> void:
 	GameData.scene_changing.connect(_on_scene_changing)
@@ -60,24 +60,13 @@ func _physics_process(delta: float) -> void:
 			if a.global_position.distance_to(self.global_position) < 5.0:
 				pick_item(a, objeto_a_agarrar)
 
-func pick_item(item: StaticBody2D, array: Array[StaticBody2D]):
-	var data := ItemData.new()
-	data.scene = load(item.scene_file_path)
-	data.name = item.name
-	
-	var e := EffectData.new()
-	e.tipo = item.tipo_efecto
-	e.valor = item.efecto
-	var lista_efectos : Array[EffectData] = []
-	lista_efectos.append(e)
-	data.efectos = lista_efectos
-	
-	picked.emit(data)
-	array.erase(item)
-	item.queue_free()
+func pick_item(world_item: WorldItem, array: Array[WorldItem]):
+	picked.emit(world_item.item)
+	array.erase(world_item)
+	world_item.queue_free()
 
 func _on_pick_range_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Pickable") and body not in objeto_a_agarrar:
+	if body is WorldItem and body not in objeto_a_agarrar:
 		objeto_a_agarrar.push_back(body)
 
 func _on_inventory_inventory_filled() -> void:
@@ -141,11 +130,11 @@ func save_money():
 
 func load_money():
 	money = GameData.saved_money
-	money_label.text = str(money)
+	money_label.text = "$" + str(money)
 
 func _on_scene_changing() -> void:
 	save_money()
 
 func update_money(amount: int):
 	money += amount
-	money_label.text = str(money)
+	money_label.text = "$" + str(money)
