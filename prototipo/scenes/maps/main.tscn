@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ca3hhopvjowbr" path="res://scenes/chars/char_hunter.tscn" id="8_m6k0o"]
 [ext_resource type="PackedScene" uid="uid://b37v8okdyon3f" path="res://scenes/enemies/blue_slime.tscn" id="9_ss43a"]
 [ext_resource type="PackedScene" uid="uid://mahthgvuw0a2" path="res://scenes/furniture/potion_table.tscn" id="10_00xaj"]
+[ext_resource type="PackedScene" uid="uid://dy0d8703vs0cu" path="res://scenes/furniture/selling_table.tscn" id="11_kvreu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tipki"]
 texture = ExtResource("1_jyhfs")
@@ -557,3 +558,5 @@ position = Vector2(-636, 117)
 
 [node name="PotionTable" parent="." unique_id=997449038 instance=ExtResource("10_00xaj")]
 position = Vector2(-249, -22)
+
+[node name="SellingTable" parent="." unique_id=1370882965 instance=ExtResource("11_kvreu")]

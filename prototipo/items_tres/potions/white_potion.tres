@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://d0qdr4w857x7p"]
+
+[ext_resource type="Texture2D" uid="uid://c73ld5kyvd16s" path="res://assets/potions/white_heart.png" id="1_en0pp"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="2_4b55i"]
+
+[resource]
+script = ExtResource("2_4b55i")
+name = "Poción de Debilidad Mediana"
+category = 1
+icon = ExtResource("1_en0pp")
+metadata/_custom_type_script = "uid://bc683lnt43io8"

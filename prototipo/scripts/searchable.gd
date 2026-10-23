@@ -18,8 +18,10 @@ func _input(event: InputEvent) -> void:
 				var world_item : WorldItem = WORLD_ITEM.instantiate()
 				world_item.item = ItemInstance.create(definition)
 				get_parent().add_child(world_item)
+				
 				var offset = Vector2(randf_range(-100, 100), randf_range(-100, 100))
 				world_item.global_position = global_position + offset
+				
 				on_cd = true
 				$Timer.start()
 

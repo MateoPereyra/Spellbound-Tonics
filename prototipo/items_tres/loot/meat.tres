@@ -1,19 +1,12 @@
 [gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://b5w76tje1udvc"]
 
-[ext_resource type="Script" uid="uid://cic8tj2gwlymw" path="res://scripts/item_system/effect_range.gd" id="1_327bv"]
 [ext_resource type="Texture2D" uid="uid://vr4clgl15alr" path="res://assets/Loot-Searchables/Meat Resource.png" id="2_lwpm8"]
 [ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="3_1b0dm"]
-
-[sub_resource type="Resource" id="Resource_ckotg"]
-script = ExtResource("1_327bv")
-tipo = 1
-max_value = 7
-metadata/_custom_type_script = "uid://cic8tj2gwlymw"
 
 [resource]
 script = ExtResource("3_1b0dm")
 name = "Carne"
 is_ingredient = true
 icon = ExtResource("2_lwpm8")
-effect_ranges = Array[ExtResource("1_327bv")]([SubResource("Resource_ckotg")])
+first_effect = 1
 metadata/_custom_type_script = "uid://bc683lnt43io8"

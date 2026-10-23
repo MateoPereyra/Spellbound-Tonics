@@ -12,6 +12,8 @@
 [ext_resource type="Resource" uid="uid://va5yfdho4n83" path="res://items_tres/potions/green_potion_small.tres" id="7_x44au"]
 [ext_resource type="Resource" uid="uid://biuj3o0um51dd" path="res://items_tres/potions/yelloy_potion_small.tres" id="9_8na5l"]
 [ext_resource type="Resource" uid="uid://371rvvtjcquq" path="res://items_tres/potions/yellow_potion.tres" id="10_v6tm5"]
+[ext_resource type="Resource" uid="uid://dkpyjakf4ifth" path="res://items_tres/potions/white_potion_small.tres" id="11_x44au"]
+[ext_resource type="Resource" uid="uid://d0qdr4w857x7p" path="res://items_tres/potions/white_potion.tres" id="12_8na5l"]
 [ext_resource type="Resource" uid="uid://cl8sg8txdviwl" path="res://items_tres/potions/black_potion.tres" id="12_lk5ub"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c6ep4"]
@@ -31,6 +33,7 @@ potions_veneno = Array[ExtResource("2_o86ap")]([ExtResource("3_wlg1h"), ExtResou
 potions_curacion = Array[ExtResource("2_o86ap")]([ExtResource("6_0nmy1"), ExtResource("5_mcjkk")])
 potions_resistencia = Array[ExtResource("2_o86ap")]([ExtResource("7_x44au"), ExtResource("3_yey0u")])
 potions_fuerza = Array[ExtResource("2_o86ap")]([ExtResource("9_8na5l"), ExtResource("10_v6tm5")])
+potions_debilidad = Array[ExtResource("2_o86ap")]([ExtResource("11_x44au"), ExtResource("12_8na5l")])
 potions_mixed = Array[ExtResource("2_o86ap")]([ExtResource("4_krdw7"), ExtResource("12_lk5ub")])
 metadata/_edit_use_anchors_ = true
 
