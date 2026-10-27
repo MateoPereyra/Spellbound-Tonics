@@ -6,7 +6,7 @@ class_name ItemInstance extends Resource
 static func create(def: ItemDefinition) -> ItemInstance:
 	var inst := ItemInstance.new()
 	inst.definition = def
-	inst.effects = def.roll_effects()
+	inst.effects = def.roll_stats()
 	return inst
 
 static func create_potion(def: ItemDefinition, effect: Array[EffectData]) -> ItemInstance:

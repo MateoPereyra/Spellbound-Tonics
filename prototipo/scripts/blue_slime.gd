@@ -95,6 +95,11 @@ func move_to_attack():
 			objetive.take_damage(damage)
 			attack_cd.start()
 
+func take_damage(amount : int):
+	health -= amount
+	if health <= 0:
+		die()
+
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		enemie_on_sight = true

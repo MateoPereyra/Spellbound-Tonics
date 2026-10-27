@@ -1,11 +1,15 @@
 extends CharacterBody2D
 
+#Others
 @onready var motion := Vector2.ZERO
 @onready var health_bar: ProgressBar = $CanvasLayer/HealthBar
 @onready var money_label: Label = $CanvasLayer/MoneyLabel
+#Spells
 @onready var spell_icon: TextureRect = $CanvasLayer/SpellIcon
 @onready var current_spell_label: Label = $CanvasLayer/CurrentSpellLabel
 @onready var cd_spell: Timer = $CDSpell
+@onready var marker_2d: Marker2D = $Marker2D
+#NPCs
 @onready var affection_menu: Control = $CanvasLayer/AffectionMenu
 
 @export var health := 100
@@ -17,6 +21,7 @@ extends CharacterBody2D
 var objeto_a_agarrar : Array[WorldItem] = []
 var inventory_full := false
 var current_spell
+var spell_index := 0
 var can_use_spell := true
 var is_interacting := false
 var is_menu_visible := false
@@ -26,7 +31,7 @@ signal picked(item: ItemInstance)
 func _ready() -> void:
 	GameData.scene_changing.connect(_on_scene_changing)
 	
-	current_spell = available_spells[0]
+	current_spell = available_spells[spell_index]
 	health_bar.value = health
 	money_label.text = "$" + str(money)
 	spell_icon.texture = get_spell_texture(current_spell)
@@ -38,6 +43,11 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not is_interacting:
 		motion = Input.get_vector("left", "right", "up", "down")
+		
+		if event.is_action_pressed("spell_left"):
+			get_next_spell(false)
+		if event.is_action_pressed("spell_right"):
+			get_next_spell(true)
 		
 		if event.is_action_pressed("spell") and can_use_spell:
 			use_spell()
@@ -60,6 +70,7 @@ func _physics_process(delta: float) -> void:
 			if a.global_position.distance_to(self.global_position) < 5.0:
 				pick_item(a, objeto_a_agarrar)
 
+#region Inventory
 func pick_item(world_item: WorldItem, array: Array[WorldItem]):
 	picked.emit(world_item.item)
 	array.erase(world_item)
@@ -71,24 +82,43 @@ func _on_pick_range_body_entered(body: Node2D) -> void:
 
 func _on_inventory_inventory_filled() -> void:
 	inventory_full = true
-
-func use_spell():
-	var shot = current_spell.instantiate()
-	get_parent().add_child(shot)
-	shot.global_position = $Marker2D.global_position
-	shot.direction = (get_global_mouse_position() - shot.global_position).normalized()
-	can_use_spell = false
-	cd_spell.start()
+#endregion
 
 func toggle_interact():
 	is_interacting = !is_interacting
+
+func take_damage(damage: int):
+	health -= damage
+	health_bar.value = health
+	if health <= 0:
+		prints("0 HP")
+		die()
+
+func die():
+	GameData.game_over()
+
+#region Spells
+func use_spell():
+	if current_spell == null:
+		return
+	
+	var spell := current_spell.instantiate() as Spell
+	if spell == null:
+		push_error("La escena del hechizo no tiene un script que extienda Spell.")
+		return
+	
+	get_parent().add_child(spell)
+	spell.cast(self, marker_2d.global_position, get_global_mouse_position())
+	
+	can_use_spell = false
+	cd_spell.start(spell.cooldown)
 
 func get_spell_texture(spell_scene: PackedScene) -> Texture2D:
 	if spell_scene == null:
 		return null
 	
 	var temp_instance = spell_scene.instantiate()
-	var texture = temp_instance.get_node("Sprite2D").texture
+	var texture = temp_instance.get_node("Icon").texture
 	temp_instance.queue_free()
 	
 	return texture
@@ -101,28 +131,36 @@ func get_current_spell(spell_scene: PackedScene):
 	current_spell_label.text = "Current spell: " + temp_instance.name
 	temp_instance.queue_free()
 
-func take_damage(damage: int):
-	health -= damage
-	health_bar.value = health
-	if health <= 0:
-		prints("0 HP")
-		die()
-
-func die():
-	GameData.game_over()
-
-func potion_bought(amount: int):
-	money += amount
-	money_label.text = str(money)
-
 func _on_cd_spell_timeout() -> void:
 	can_use_spell = true
 
+func get_next_spell(next : bool):
+	if next:
+		if spell_index < (available_spells.size() - 1):
+			spell_index += 1
+		elif spell_index >= (available_spells.size() - 1):
+			spell_index = 0
+	else:
+		if spell_index != 0:
+			spell_index -= 1
+		elif spell_index <= 0:
+			spell_index = available_spells.size() - 1
+	
+	current_spell = available_spells[spell_index]
+	spell_icon.texture = get_spell_texture(current_spell)
+	get_current_spell(current_spell)
+#endregion
+
+#region Money funcs
 func can_pay(price: int):
 	return price <= money
 
 func pay(price: int):
 	money -= price
+	money_label.text = str(money)
+
+func potion_bought(amount: int):
+	money += amount
 	money_label.text = str(money)
 
 func save_money():
@@ -132,9 +170,10 @@ func load_money():
 	money = GameData.saved_money
 	money_label.text = "$" + str(money)
 
-func _on_scene_changing() -> void:
-	save_money()
-
 func update_money(amount: int):
 	money += amount
 	money_label.text = "$" + str(money)
+#endregion
+
+func _on_scene_changing() -> void:
+	save_money()

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bwfu4tmb6ntng"]
+
+[ext_resource type="Script" uid="uid://coty4w6rs64bq" path="res://magma_floor.gd" id="1_c4w2r"]
+[ext_resource type="AudioStream" uid="uid://clmo2mswtwfws" path="res://audio/431174__blankened__fireball-explosion.wav" id="2_7b37u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dvhly"]
+radius = 88.0
+
+[node name="MagmaFloor" type="Area2D" unique_id=472771630]
+script = ExtResource("1_c4w2r")
+cooldown = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2125954561]
+shape = SubResource("CircleShape2D_dvhly")
+
+[node name="Timer" type="Timer" parent="." unique_id=541828076]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1512489142]
+stream = ExtResource("2_7b37u")
+autoplay = true
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1386312418]
+scale = Vector2(0.2, 0.2)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

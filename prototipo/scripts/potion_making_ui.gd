@@ -10,6 +10,8 @@ extends Control
 @export var potions_debilidad : Array[ItemDefinition] = []
 @export var potions_mixed : Array[ItemDefinition] = []
 
+@export var effects_threshold := 25.0
+
 var has_veneno := false
 var has_curacion := false
 var has_resistencia := false
@@ -44,6 +46,9 @@ func _on_button_pressed() -> void:
 			if slot.slot_type == Slot.SlotType.INGREDIENTE and slot.item != null:
 				used_slots.append(slot)
 				for efecto in slot.item.effects:
+					#prints(efecto.tipo, efecto.valor) ESTO TENGO QUE SOLUCIONAR 
+					#efecto.valor = efecto.valor / 2 PARA QUE NO SE EJECUTE 
+					#prints(efecto.tipo, efecto.valor) SI SOLO HAY 1 INGREDIENTE
 					sumas[efecto.tipo] = sumas.get(efecto.tipo, 0) + efecto.valor
 			elif slot.slot_type == Slot.SlotType.RESULTADO and slot.item == null:
 				result_slot = slot
@@ -56,15 +61,24 @@ func _on_button_pressed() -> void:
 	if result_slot == null or sumas.is_empty():
 		return
 	
+	for tipo in sumas.keys():
+		sumas[tipo] = roundi(sumas[tipo] / 2.0)
 	sumas = EffectData.cancel_opposites(sumas)
+	
+	for tipo in sumas.keys():
+		if sumas[tipo] < effects_threshold:
+			sumas.erase(tipo)
+	
 	if sumas.is_empty():
+		inspection_label_result.text = "Los efectos son demasiado débiles (menores a 25)."
+		inspection_label_result.show()
 		return
 	
 	var total_puntos := 0
 	for tipo in sumas.keys():
 		total_puntos += sumas[tipo]
 		mark_type(tipo)
-		
+	
 	resolve_mixed()
 	
 	var definicion := pick_definition(total_puntos)
@@ -89,6 +103,7 @@ func reset_flags() -> void:
 	has_curacion = false
 	has_resistencia = false
 	has_fuerza = false
+	has_debilidad = false
 	is_mixed = false
 
 func mark_type(tipo: EffectData.EffectType) -> void:
@@ -136,7 +151,7 @@ func get_pool() -> Array[ItemDefinition]:
 
 func pick_definition(total_puntos: int) -> ItemDefinition:
 	var pool := get_pool()
-	var indice := 1 if total_puntos > 10 else 0
+	var indice := 1 if total_puntos > 175 else 0
 	if indice >= pool.size():
 		return null
 	return pool[indice]
