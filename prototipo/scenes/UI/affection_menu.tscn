@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://htumswihblal"]
 
 [ext_resource type="Texture2D" uid="uid://bf0mxslmkyjru" path="res://assets/64x64 adventure characters.png" id="1_fmp4k"]
+[ext_resource type="Script" uid="uid://cqhyw5iiw8mc" path="res://scenes/UI/affection_menu.gd" id="1_vciog"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7me2p"]
 atlas = ExtResource("1_fmp4k")
@@ -26,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vciog")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1591476978]
 layout_mode = 1

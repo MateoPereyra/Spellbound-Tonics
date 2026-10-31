@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dduabonv5rqxh"]
 
 [ext_resource type="Script" uid="uid://cl8l2up04o5f7" path="res://scripts/fireball.gd" id="1_1gl40"]
-[ext_resource type="Texture2D" uid="uid://3iolispchcrr" path="res://assets/FireballSpr.png" id="2_cb14k"]
+[ext_resource type="Texture2D" uid="uid://3iolispchcrr" path="res://assets/Spells/FireballSpr.png" id="2_cb14k"]
 [ext_resource type="AudioStream" uid="uid://clmo2mswtwfws" path="res://audio/431174__blankened__fireball-explosion.wav" id="3_fnao3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7me2p"]
@@ -12,9 +12,8 @@ height = 34.0
 collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_1gl40")
-speed = 450
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=324156457]
+[node name="Icon" type="Sprite2D" parent="." unique_id=324156457]
 texture = ExtResource("2_cb14k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152702140]

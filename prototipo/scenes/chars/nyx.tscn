@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bmwe1tblpj5gu" path="res://scripts/nyx.gd" id="1_8cm81"]
 [ext_resource type="Texture2D" uid="uid://bf0mxslmkyjru" path="res://assets/64x64 adventure characters.png" id="1_pmplf"]
 [ext_resource type="PackedScene" uid="uid://dduabonv5rqxh" path="res://scenes/spells/fireball.tscn" id="2_kjmvp"]
+[ext_resource type="PackedScene" uid="uid://d3kx0tlmgbfr" path="res://scenes/spells/thunder.tscn" id="3_42xdb"]
 [ext_resource type="PackedScene" uid="uid://uuqcna1vfcpo" path="res://scenes/UI/inventory.tscn" id="3_oq8bg"]
 [ext_resource type="Script" uid="uid://cgvbntexavbh0" path="res://scripts/inventory.gd" id="4_4416i"]
 [ext_resource type="PackedScene" uid="uid://htumswihblal" path="res://scenes/UI/affection_menu.tscn" id="6_8iyso"]
@@ -26,7 +27,7 @@ motion_mode = 1
 script = ExtResource("1_8cm81")
 speed = 250
 pick_speed = 450
-available_spells = Array[PackedScene]([ExtResource("2_kjmvp")])
+available_spells = Array[PackedScene]([ExtResource("2_kjmvp"), ExtResource("3_42xdb")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1532048808]
 texture = ExtResource("1_pmplf")

@@ -16,9 +16,7 @@ func _input(event: InputEvent) -> void:
 		if dialogue_file != null and not talking:
 			player_ref.toggle_interact()
 			start_dialogue()
-			for node in get_tree().get_nodes_in_group("Enchanter"):
-				if node.is_in_group("ProgressBar"):
-					node.value += 5
+			GameData.add_affection("Enchanter", 5)
 
 func start_dialogue():
 	DialogueManager.show_dialogue_balloon(dialogue_file, "start") #El start es opcional

@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cxdf18ssbgm5m"]
+
+[ext_resource type="Texture2D" uid="uid://c80uq260n56vh" path="res://assets/HUD/night_forest.jpg" id="1_j8qtn"]
+[ext_resource type="Script" uid="uid://byrhgxsl4mkid" path="res://scripts/menu_principal.gd" id="1_yroop"]
+[ext_resource type="AudioStream" uid="uid://c5ypwbdqbgbwn" path="res://audio/Music/MinishCap_intro.mp3" id="3_e4onw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7me2p"]
+font_size = 41
+font_color = Color(0.47843137, 0.19607843, 0.78431374, 1)
+
+[node name="MenuPrincipal" type="Control" unique_id=668670861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yroop")
+boton_jugar = "uid://dhfmnhrfmol6v"
+boton_controles = "uid://bp66lk7c3eklt"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1176203175]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.002604
+anchor_bottom = 0.9999999
+offset_right = 10394.998
+offset_bottom = 5831.9995
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_j8qtn")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=172505578]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -132.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=2025436181]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -100)
+text = "Spellbound Tonics"
+label_settings = SubResource("LabelSettings_7me2p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Jugar" type="Button" parent="VBoxContainer" unique_id=808518146]
+layout_mode = 2
+text = "Jugar"
+icon_alignment = 1
+
+[node name="Controles" type="Button" parent="VBoxContainer" unique_id=755393313]
+layout_mode = 2
+text = "Controles"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=373159645]
+layout_mode = 2
+text = "Salir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=903312987]
+stream = ExtResource("3_e4onw")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]

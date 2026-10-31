@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3 uid="uid://dkpyjakf4ifth"]
+
+[ext_resource type="Texture2D" uid="uid://doxuq4l6xdjwp" path="res://assets/potions/white_droplet.png" id="1_5uk21"]
+[ext_resource type="Script" uid="uid://bc683lnt43io8" path="res://scripts/item_system/item_def.gd" id="2_pq6kk"]
+
+[resource]
+script = ExtResource("2_pq6kk")
+name = "Poción de Debilidad Pequeña"
+category = 1
+icon = ExtResource("1_5uk21")
+metadata/_custom_type_script = "uid://bc683lnt43io8"

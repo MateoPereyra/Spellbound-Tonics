@@ -2,7 +2,6 @@ extends StaticBody2D
 
 @export var table_id : int = 1
 @onready var can_interact := false
-#@export var potions : Array[PackedScene] = []
 
 func _ready() -> void:
 	GameData.scene_changing.connect(_on_scene_changing)

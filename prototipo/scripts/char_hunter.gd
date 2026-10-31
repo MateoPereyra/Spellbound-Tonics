@@ -34,10 +34,7 @@ func _input(event: InputEvent) -> void:
 		if dialogue_file != null and not talking:
 			player_ref.toggle_interact()
 			start_dialogue()
-			for node in get_tree().get_nodes_in_group("Hunter"):
-				if node.is_in_group("ProgressBar"):
-					node.value += 5
-			#GameData.update_affection(own_name)Tengo que pensar bien esto
+			GameData.add_affection("Hunter", 5)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
