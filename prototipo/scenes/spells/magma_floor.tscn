@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwfu4tmb6ntng"]
 
-[ext_resource type="Script" uid="uid://coty4w6rs64bq" path="res://magma_floor.gd" id="1_c4w2r"]
-[ext_resource type="AudioStream" uid="uid://clmo2mswtwfws" path="res://audio/431174__blankened__fireball-explosion.wav" id="2_7b37u"]
+[ext_resource type="Script" uid="uid://coty4w6rs64bq" path="res://scripts/magma_floor.gd" id="1_c4w2r"]
+[ext_resource type="AudioStream" uid="uid://clmo2mswtwfws" path="res://audio/Spells/431174__blankened__fireball-explosion.wav" id="2_7b37u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dvhly"]
 radius = 88.0

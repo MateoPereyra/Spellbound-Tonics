@@ -1,17 +1,20 @@
 extends Node
 
 signal scene_changing
+signal affection_changed(npc: String, value: int)
+
+const GAME_OVER = preload("res://scenes/UI/game_over.tscn")
+const MAX_AFFECTION := 100
 
 var just_started := true
+var affection : Dictionary = {}
 
 var inventory_items : Array[ItemInstance] = []
 var in_table_items : Dictionary = {}
 
-const GAME_OVER = preload("res://scenes/UI/game_over.tscn")
-
 var saved_money : int = 0
 var current_day : int = 1
-#var rent_day : int = 6
+
 #var rent : int = 0
 #var renta_cobrada_hoy := false
 var rent : int:
@@ -101,8 +104,9 @@ func restart_mission_vars():
 	item_guardado = null
 	pago_guardado = 0
 
-#func update_affection(name: String) -> void: Tengo que pensar bien esto
-	#for node in get_tree().get_nodes_in_group(name):
-				#if node.is_in_group("ProgressBar"):
-					#node.value += 5
-	#pass
+func add_affection(npc: String, amount: int) -> void:
+	affection[npc] = clampi(affection.get(npc, 0) + amount, 0, MAX_AFFECTION)
+	affection_changed.emit(npc, affection[npc])
+
+func restart_affection() -> void:
+	affection.clear()

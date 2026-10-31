@@ -1,23 +1,9 @@
-extends CharacterBody2D
+extends Enemy
 
 const WORLD_ITEM = preload("uid://c4k0hvn78cney")
 
-@onready var attack_cd: Timer = $AttackCD
-@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
-
-@export var velocidad := 100
-@export var rango := 100
-@export var health := 100
-@export var damage := 5
-@export var loot : ItemDefinition
-
-var direction := Vector2.ZERO
-var destino : Vector2
-var has_destino := false
-var espera := false
-var enemie_on_sight := false
-var objetive : Node2D
-var attacking := false
+@onready var walking_aud: AudioStreamPlayer2D = $walking
+@onready var attacking_aud: AudioStreamPlayer2D = $attacking
 
 func _ready() -> void:
 	generar_nuevo_destino()
@@ -28,6 +14,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		move_to_attack()
 	update_anim()
+	update_walk_sound()
 
 func generar_nuevo_destino():
 	destino = global_position + Vector2(randf_range(-rango, rango), randf_range(-rango, rango))
@@ -59,6 +46,10 @@ func movimiento():
 			generar_nuevo_destino()
 
 func update_anim():
+	if attacking:
+		anim.play("idle")
+		return
+	
 	var dir_anim = "idle"
 	
 	if (direction.x <= -0.5):
@@ -70,7 +61,7 @@ func update_anim():
 	elif (direction.y >= 0.5):
 		dir_anim = "walk_down"
 		
-	get_node("AnimatedSprite2D").play(dir_anim)
+	anim.play(dir_anim)
 
 func die():
 	var world_item : WorldItem = WORLD_ITEM.instantiate()
@@ -90,8 +81,8 @@ func move_to_attack():
 	else:
 		velocity = Vector2.ZERO
 		if attack_cd.is_stopped():
-			audio.pitch_scale = randf_range(0.8, 1.3)
-			audio.play()
+			attacking_aud.pitch_scale = randf_range(0.8, 1.7)
+			attacking_aud.play()
 			objetive.take_damage(damage)
 			attack_cd.start()
 
@@ -99,6 +90,14 @@ func take_damage(amount : int):
 	health -= amount
 	if health <= 0:
 		die()
+
+func update_walk_sound() -> void:
+	if velocity.length() > 1.0:
+		if not walking_aud.playing:
+			walking_aud.pitch_scale = randf_range(0.7, 1.7)
+			walking_aud.play()
+	elif walking_aud.playing:
+		walking_aud.stop()
 
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

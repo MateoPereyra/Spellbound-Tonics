@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boxbfix0n1mdl"
-path="res://.godot/imported/lightining2-Sheet.png-12c431130304f6d75a9e69c86280584b.ctex"
+uid="uid://dcnqxrjrdcvpb"
+path="res://.godot/imported/Slime_Medium_Blue.png-be4e2213667bce4d874ac2fc443c3f3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lightining2-Sheet.png"
-dest_files=["res://.godot/imported/lightining2-Sheet.png-12c431130304f6d75a9e69c86280584b.ctex"]
+source_file="res://assets/Enemies/Slime_Medium_Blue.png"
+dest_files=["res://.godot/imported/Slime_Medium_Blue.png-be4e2213667bce4d874ac2fc443c3f3c.ctex"]
 
 [params]
 

@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://bp66lk7c3eklt"]
+
+[ext_resource type="Texture2D" uid="uid://c80uq260n56vh" path="res://assets/HUD/night_forest.jpg" id="1_kahmr"]
+[ext_resource type="Script" uid="uid://5q14ucc6vefc" path="res://scenes/UI/menu_controles.gd" id="1_m48vn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7me2p"]
+font_size = 41
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6ep4"]
+font_size = 31
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpyw1"]
+font_size = 31
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MenuControles" type="Control" unique_id=288342839]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m48vn")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1802976854]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.002604
+anchor_bottom = 0.9999999
+offset_right = 10394.998
+offset_bottom = 5831.9995
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_kahmr")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1756615413]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4171007
+anchor_right = 0.58289933
+anchor_bottom = 0.08796296
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 50)
+text = "Controles"
+label_settings = SubResource("LabelSettings_7me2p")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=833601160]
+custom_minimum_size = Vector2(400, 350)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -175.0
+offset_right = 200.0
+offset_bottom = 175.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer" unique_id=1630769090]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/HBoxContainer" unique_id=209138979]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(-10, 0)
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1791693304]
+layout_mode = 2
+text = "Acción:"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=4612926]
+layout_mode = 2
+text = "Arriba"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=118967194]
+layout_mode = 2
+text = "Abajo"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=692932928]
+layout_mode = 2
+text = "Izquierda"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1334129058]
+layout_mode = 2
+text = "Derecha"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=12325710]
+layout_mode = 2
+text = "Usar hechizo"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1454031597]
+layout_mode = 2
+text = "Sig. hechizo"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=22296097]
+layout_mode = 2
+text = "Ant. hechizo"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=1605637190]
+layout_mode = 2
+text = "Interactuar"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer" unique_id=216587823]
+layout_mode = 2
+text = "Menú NPCs"
+label_settings = SubResource("LabelSettings_c6ep4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ScrollContainer/HBoxContainer" unique_id=1468595353]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, 0)
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=1178660345]
+layout_mode = 2
+text = "Botón:"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=1065276375]
+layout_mode = 2
+text = "W"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=316607312]
+layout_mode = 2
+text = "S"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=16808103]
+layout_mode = 2
+text = "A"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=152917405]
+layout_mode = 2
+text = "D"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=339900612]
+layout_mode = 2
+text = "Click Izq"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=2051325666]
+layout_mode = 2
+text = "C"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=203290333]
+layout_mode = 2
+text = "X"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=753928292]
+layout_mode = 2
+text = "E"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="ScrollContainer/HBoxContainer/VBoxContainer2" unique_id=956938572]
+layout_mode = 2
+text = "R"
+label_settings = SubResource("LabelSettings_qpyw1")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1998454005]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -112.0
+offset_right = 178.0
+offset_bottom = -49.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Volver"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

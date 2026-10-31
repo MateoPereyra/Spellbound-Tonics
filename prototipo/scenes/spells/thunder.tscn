@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d3kx0tlmgbfr"]
 
 [ext_resource type="Script" uid="uid://cya1o4cqyk3sd" path="res://scripts/thunder.gd" id="1_781tq"]
-[ext_resource type="AudioStream" uid="uid://clmo2mswtwfws" path="res://audio/431174__blankened__fireball-explosion.wav" id="3_1m5ou"]
-[ext_resource type="Texture2D" uid="uid://boxbfix0n1mdl" path="res://assets/lightining2-Sheet.png" id="3_781tq"]
-[ext_resource type="Texture2D" uid="uid://dbme46qwx2qoj" path="res://assets/lightining2-Icon.png" id="4_b18ld"]
+[ext_resource type="AudioStream" uid="uid://cnatwog1lbmf1" path="res://audio/Spells/electricity_sparks_00_0.wav" id="2_b18ld"]
+[ext_resource type="Texture2D" uid="uid://boxbfix0n1mdl" path="res://assets/Spells/lightining2-Sheet.png" id="3_781tq"]
+[ext_resource type="Texture2D" uid="uid://dbme46qwx2qoj" path="res://assets/Spells/lightining2-Icon.png" id="4_b18ld"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fnao3"]
 radius = 40.0
@@ -70,7 +70,7 @@ position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_fnao3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1920856614]
-stream = ExtResource("3_1m5ou")
+stream = ExtResource("2_b18ld")
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2097995702]

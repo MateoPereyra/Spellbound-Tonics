@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbme46qwx2qoj"
-path="res://.godot/imported/lightining2-Icon.png-7c102020d0374f1510f076467a96b242.ctex"
+uid="uid://da0axjhmmdyq0"
+path="res://.godot/imported/Warhog_Idle.png-127c3e922b69c6abeb6e0fcfd225c976.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lightining2-Icon.png"
-dest_files=["res://.godot/imported/lightining2-Icon.png-7c102020d0374f1510f076467a96b242.ctex"]
+source_file="res://assets/Enemies/Warhog_Idle.png"
+dest_files=["res://.godot/imported/Warhog_Idle.png-127c3e922b69c6abeb6e0fcfd225c976.ctex"]
 
 [params]
 

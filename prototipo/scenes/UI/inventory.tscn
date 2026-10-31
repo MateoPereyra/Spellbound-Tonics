@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://uuqcna1vfcpo"]
 
-[ext_resource type="Texture2D" uid="uid://bdxr6j8a66nqg" path="res://assets/inventory_slot.png" id="1_qw0r6"]
+[ext_resource type="Texture2D" uid="uid://bdxr6j8a66nqg" path="res://assets/HUD/inventory_slot.png" id="1_qw0r6"]
 [ext_resource type="PackedScene" uid="uid://ddtqe1tqhwmhm" path="res://scenes/UI/new_slot.tscn" id="2_hj2ta"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7me2p"]

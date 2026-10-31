@@ -31,15 +31,16 @@ var rarities := {
 @export var first_range : EffectRange
 @export var base_total_points = 100
 
-var total_points = 100
-var rarity : String
+#var total_points = 100
+#var rarity : String
 
-
-func roll_stats() -> Array[EffectData]:
-	prints(total_points)
+func roll_stats(rarity : String) -> Array[EffectData]:
+	#prints(total_points)
 	rarity = get_rarity()
-	total_points = base_total_points * rarities[rarity]["Multiplicador"]
-	prints(str(rarity) + " " + str(total_points))
+	var mult : float = rarities[rarity]["Multiplicador"]
+	#total_points = base_total_points * rarities[rarity]["Multiplicador"]
+	var total := roundi(base_total_points * mult)
+	#prints(str(rarity) + " " + str(total))
 	
 	var result : Array[EffectData] = []
 	if first_effect == EffectData.EffectType.NONE:
@@ -48,26 +49,33 @@ func roll_stats() -> Array[EffectData]:
 	var first := EffectData.new()
 	first.tipo = first_effect
 	
-	if first_effect == second_effect:
-		second_effect = EffectData.EffectType.NONE
+	#if first_effect == second_effect:
+		#second_effect = EffectData.EffectType.NONE
+	#
+	var second_type := second_effect
+	if second_type == first_effect:
+		second_type = EffectData.EffectType.NONE
 	
 	if second_effect == EffectData.EffectType.NONE:
-		first.valor = total_points
+		first.valor = total
 		result.append(first)
 		return result
 	
 	if first_range == null:
 		push_warning(name + ": tiene dos efectos pero no tiene first_range.")
-		first.valor = total_points
+		first.valor = total
 		result.append(first)
 		return result
 	
-	first.valor = randi_range(first_range.min_value, first_range.max_value)
+	var min_scaled := roundi(first_range.min_value * mult)
+	var max_scaled := roundi(first_range.max_value * mult)
+	first.valor = randi_range(min_scaled, max_scaled)
+	#first.valor = randi_range(first_range.min_value, first_range.max_value)
 	result.append(first)
 	
 	var second := EffectData.new()
-	second.tipo = second_effect
-	second.valor = total_points - first.valor
+	second.tipo = second_type
+	second.valor = total - first.valor
 	result.append(second)
 	return result
 

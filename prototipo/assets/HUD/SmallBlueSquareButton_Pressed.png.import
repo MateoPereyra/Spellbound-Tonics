@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdxr6j8a66nqg"
-path="res://.godot/imported/inventory_slot.png-a43fb993ccc745b90cd83b88486e56b6.ctex"
+uid="uid://bejq7acrvhirb"
+path="res://.godot/imported/SmallBlueSquareButton_Pressed.png-0bd8035c602a9cde0609d5299416e497.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/inventory_slot.png"
-dest_files=["res://.godot/imported/inventory_slot.png-a43fb993ccc745b90cd83b88486e56b6.ctex"]
+source_file="res://assets/HUD/SmallBlueSquareButton_Pressed.png"
+dest_files=["res://.godot/imported/SmallBlueSquareButton_Pressed.png-0bd8035c602a9cde0609d5299416e497.ctex"]
 
 [params]
 

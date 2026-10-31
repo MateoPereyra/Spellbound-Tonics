@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3iolispchcrr"
-path="res://.godot/imported/FireballSpr.png-645d8f5bea4482fa110cead6298a0b4a.ctex"
+uid="uid://d2apdjduquoyl"
+path="res://.godot/imported/Slime_Small_Blue.png-11a983fb40a5ace1640eabebd7532e71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FireballSpr.png"
-dest_files=["res://.godot/imported/FireballSpr.png-645d8f5bea4482fa110cead6298a0b4a.ctex"]
+source_file="res://assets/Enemies/Slime_Small_Blue.png"
+dest_files=["res://.godot/imported/Slime_Small_Blue.png-11a983fb40a5ace1640eabebd7532e71.ctex"]
 
 [params]
 

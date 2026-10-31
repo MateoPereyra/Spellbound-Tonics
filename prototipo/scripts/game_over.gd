@@ -7,6 +7,7 @@ func _on_button_pressed() -> void:
 	get_tree().paused = false
 	GameData.restart_day_count()
 	GameData.restart_saved_money()
+	GameData.restart_affection()
 	get_tree().reload_current_scene()
 
 

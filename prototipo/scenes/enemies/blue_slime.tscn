@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://b37v8okdyon3f"]
 
-[ext_resource type="Texture2D" uid="uid://dcnqxrjrdcvpb" path="res://assets/Slime_Medium_Blue.png" id="1_dix13"]
+[ext_resource type="Texture2D" uid="uid://dcnqxrjrdcvpb" path="res://assets/Enemies/Slime_Medium_Blue.png" id="1_dix13"]
 [ext_resource type="Script" uid="uid://wwosilp6wwdo" path="res://scripts/blue_slime.gd" id="1_l0e5q"]
 [ext_resource type="Resource" uid="uid://d3evop4uu1ba8" path="res://items_tres/loot/slime_drop.tres" id="2_30a86"]
-[ext_resource type="AudioStream" uid="uid://lrykrdrinn01" path="res://audio/353250__zuzek06__slimejump.wav" id="4_wvt6j"]
+[ext_resource type="AudioStream" uid="uid://dhtvep35r7o11" path="res://audio/Enemies/splat_01.wav" id="4_hovqh"]
+[ext_resource type="AudioStream" uid="uid://lrykrdrinn01" path="res://audio/Enemies/353250__zuzek06__slimejump.wav" id="4_wvt6j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wvt6j"]
 atlas = ExtResource("1_dix13")
@@ -193,6 +194,7 @@ collision_layer = 9
 script = ExtResource("1_l0e5q")
 velocidad = 60
 rango = 65
+damage = 10
 loot = ExtResource("2_30a86")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1486314924]
@@ -213,8 +215,11 @@ shape = SubResource("CircleShape2D_7me2p")
 wait_time = 3.0
 one_shot = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=169598044]
+[node name="walking" type="AudioStreamPlayer2D" parent="." unique_id=169598044]
 stream = ExtResource("4_wvt6j")
+
+[node name="attacking" type="AudioStreamPlayer2D" parent="." unique_id=526763790]
+stream = ExtResource("4_hovqh")
 
 [node name="AttackRange" type="Area2D" parent="." unique_id=711272743]
 

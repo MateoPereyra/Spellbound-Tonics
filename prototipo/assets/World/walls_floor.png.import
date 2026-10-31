@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2apdjduquoyl"
-path="res://.godot/imported/Slime_Small_Blue.png-c8f1d09c778e3fbf33a4d953feb79381.ctex"
+uid="uid://bab1gudr7h2m"
+path="res://.godot/imported/walls_floor.png-cc0217d3296a4de8fc64820676689dca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Slime_Small_Blue.png"
-dest_files=["res://.godot/imported/Slime_Small_Blue.png-c8f1d09c778e3fbf33a4d953feb79381.ctex"]
+source_file="res://assets/World/walls_floor.png"
+dest_files=["res://.godot/imported/walls_floor.png-cc0217d3296a4de8fc64820676689dca.ctex"]
 
 [params]
 
